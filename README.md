@@ -1,6 +1,6 @@
 # website
 Craft233's official website  
-Made with Nuxt 3 and UI Thing
+Made with [Nuxt 3](https://nuxt.com/) and [UI Thing](https://ui-thing.behonbaker.com/)
 
 ## Setup
 
