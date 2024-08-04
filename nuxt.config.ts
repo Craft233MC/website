@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  
+  site: {
+    url: 'https://www.craft233.top'
+  },
 
   modules: [
     "@nuxtjs/tailwindcss",
@@ -9,7 +13,8 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@samk-dev/nuxt-vcalendar",
     "@vee-validate/nuxt",
-    "@morev/vue-transitions/nuxt"
+    "@morev/vue-transitions/nuxt",
+    "@nuxtjs/sitemap"
   ],
 
   pages: true,
