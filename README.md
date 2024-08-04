@@ -1,7 +1,7 @@
 # website
 Craft233's official website  
-Made with [Nuxt 3](https://nuxt.com/) and [UI Thing](https://ui-thing.behonbaker.com/)
-
+Made with [Nuxt 3](https://nuxt.com/) and [UI Thing](https://ui-thing.behonbaker.com/)  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/83035c91-3881-45d2-9186-61ea4f5f313c/deploy-status)](https://www.craft233.top)
 ## Setup
 
 Make sure to install the dependencies:
