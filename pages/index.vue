@@ -234,10 +234,9 @@ const members = [
 ];
 
 // 页面标题
-const runtimeConfig = useRuntimeConfig()
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - 网站名称` : 'Craft233 | 主页';
+    return titleChunk ? '' : '主页 | Craft233';
   }
 })
 

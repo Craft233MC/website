@@ -57,10 +57,9 @@ const history = [
 
 
 // 页面标题
-const runtimeConfig = useRuntimeConfig()
 useHead({
     titleTemplate: (titleChunk) => {
-        return titleChunk ? `${titleChunk} - 网站名称` : 'Craft233 | 获取存档';
+        return titleChunk ? `` : '获取存档 | Craft233';
     }
 })
 </script>
