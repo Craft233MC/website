@@ -39,7 +39,7 @@ const type = [
         link: "https://github.com/Craft233MC",
         icon: "lucide:github",
         btm_text: "GitHub",
-        class: "bg-black",
+        class: "bg-black color-white",
     },
     {
         title: "帮助改进服务端",
