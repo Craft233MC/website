@@ -18,7 +18,7 @@
                 <ul class="mt-5 flex flex-wrap items-center gap-5">
                 </ul>
                 <NuxtLink :to="t.link" target="_blank">
-                    <UiButton :class="t.class" v-bind:variant="t.variant"><Icon class="h-4 w-4" :name="t.icon" /> {{ t.btm_text }}</UiButton>
+                    <UiButton :class="t.class" v-bind:variant="t.variant" v-wave><Icon class="h-4 w-4" :name="t.icon" /> {{ t.btm_text }}</UiButton>
                 </NuxtLink>
             </li>
         </ul>

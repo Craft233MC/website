@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     "@samk-dev/nuxt-vcalendar",
     "@vee-validate/nuxt",
     "@morev/vue-transitions/nuxt",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    "v-wave/nuxt"
   ],
 
   pages: true,

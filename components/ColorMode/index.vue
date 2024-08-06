@@ -1,5 +1,5 @@
 <template>
-  <UiButton variant="outline" size="icon" @click="toggleDark">
+  <UiButton variant="outline" size="icon" @click="toggleDark" v-wave>
     <Icon name="lucide:sun-moon" class="h-4 w-4" />
   </UiButton>
 </template>
