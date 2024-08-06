@@ -41,6 +41,7 @@
                 </div>
                 <div class="lg:hidden">
                     <UiSheet>
+                        <ColorMode size="icon-sm"/>
                         <UiSheetTrigger as-child>
                             <UiButton variant="ghost" size="icon-sm">
                                 <Icon name="lucide:menu" class="h-5 w-5" />
@@ -71,6 +72,9 @@
                         </UiSheetTrigger>
                     </UiSheet>
                 </div>
+                <UiNavigationMenu as="nav" class="hidden items-center justify-start gap-8 lg:flex">
+                    <ColorMode />
+                </UiNavigationMenu>
             </UiContainer>
         </header>
         <slot />
