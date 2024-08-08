@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <UiContainer class="relative flex flex-col items-center justify-center gap-y-12 py-10 lg:h-[720px] lg:flex-row">
+    <UiContainer class="relative flex flex-col items-center justify-center gap-y-12 py-10 lg:h-[720px] lg:flex-row ">
       <img src="https://resource.neokoni.moe/craft233/img/craft233_logo.svg" alt="Server image"
         :title="`Craft233 Server image`" class="h-[200px] object-cover md:w-[600px] lg:h-full" />
       <div class="flex h-full items-center justify-center">

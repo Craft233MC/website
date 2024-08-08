@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="z-20 bg-background/80 backdrop-blur">
+        <header class="z-20 bg-background/80 backdrop-blur fixed w-full max-w-[1280px]">
             <UiContainer class="flex h-16 items-center justify-between lg:h-20">
                 <div class="flex items-center gap-10">
                     <NuxtLink to="/" class="flex items-center gap-3">
@@ -77,6 +77,7 @@
                 </UiNavigationMenu>
             </UiContainer>
         </header>
+        <div class="h-16 lg:h-20"></div>
         <slot />
         <!------------------------ 下面是脚页 ------------------------------>
         <UiContainer as="footer" class="py-16 ">
