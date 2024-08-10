@@ -36,6 +36,11 @@
                                     <UiButton to="/contribute" variant="ghost" size="sm">贡献</UiButton>
                                 </UiNavigationMenuLink>
                             </UiNavigationMenuItem>
+                            <UiNavigationMenuItem>
+                                <UiNavigationMenuLink as-child>
+                                    <UiButton to="/friendlinks" variant="ghost" size="sm">友情链接</UiButton>
+                                </UiNavigationMenuLink>
+                            </UiNavigationMenuItem>
                         </UiNavigationMenuList>
                     </UiNavigationMenu>
                 </div>
@@ -64,6 +69,8 @@
                                             <UiButton variant="ghost" class="justify-start text-base" to="/archive">存档
                                             </UiButton>
                                             <UiButton variant="ghost" class="justify-start text-base" to="/contribute">贡献
+                                            </UiButton>
+                                            <UiButton variant="ghost" class="justify-start text-base" to="/friendlinks">友情链接
                                             </UiButton>
                                         </div>
                                     </UiScrollArea>
