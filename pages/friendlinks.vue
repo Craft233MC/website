@@ -18,12 +18,14 @@
             <section class="grid grid-cols-1 gap-10 lg:gap-y-12">
                 <template v-for="l in links">
 
-                    <div class="flex flex-col items-center">
-                        <a :href="l.link" target="_blank"><UiAvatar class="mb-5 h-24 w-24 ring-1 ring-ring/20" :src="l.avatar" /></a>
-                        <a :href="l.link" target="_blank"><p class="text-lg font-semibold" v-html="l.name" /></a>
-                        <a :href="l.link" target="_blank"><ul class="mt-2 text-muted-foreground">
-                            <li v-for="intro in l.introduce" v-html="intro" />
-                        </ul></a>
+                    <div class="flex flex-col items-center pt-2 pb-2">
+                        <a class="flex flex-col items-center p-5 duration-300 rounded-3xl hover:shadow-lg" target="_blank" :href="l.link">
+                            <UiAvatar class="mb-5 h-24 w-24 ring-1 ring-ring/20" :src="l.avatar" />
+                            <p class="text-lg font-semibold" v-html="l.name" />
+                            <ul class="mt-2 text-muted-foreground">
+                                <li v-for="intro in l.introduce" v-html="intro" />
+                            </ul>
+                        </a>
                     </div>
                 </template>
             </section>
