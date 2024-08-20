@@ -97,7 +97,7 @@
                         <span class="text-xl font-semibold">Craft233</span>
                     </NuxtLink>
                     <p class="mt-5 text-muted-foreground">
-                        该写些什么呢？
+                        "Minecraft" 以及 "我的世界" 为 Mojang AB. 的商标，<br>"Craft233" 和本网站与 Mojang 以及 Microsoft 没有任何从属关系。<br>"Craft233" 不是 Minecraft 官方的服务器。
                     </p>
                 </div>
                 <template v-for="n in 1">
