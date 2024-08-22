@@ -22,7 +22,7 @@
                         <a class="flex flex-col items-center p-5 duration-300 rounded-3xl hover:shadow-lg" target="_blank" :href="l.link">
                             <UiAvatar class="mb-5 h-24 w-24 ring-1 ring-ring/20" :src="l.avatar" />
                             <p class="text-lg font-semibold" v-html="l.name" />
-                            <ul class="mt-2 text-muted-foreground">
+                            <ul class="mt-2 text-muted-foreground items-center flex flex-col">
                                 <li v-for="intro in l.introduce" v-html="intro" />
                             </ul>
                         </a>
