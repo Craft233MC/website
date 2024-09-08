@@ -37,7 +37,7 @@
 
 const links = [
     {
-        avatar: "https://bugcraft.org/favicon.svg",
+        avatar: "https://bugcraft.org/upload/favicon.svg",
         link: "https://bugcraft.org/",
         name: "BugCraft",
         introduce:
