@@ -199,6 +199,20 @@ const members = [
     ],
 
   },
+ {
+    avatar: "https://q1.qlogo.cn/g?b=qq&nk=3163455221&s=640",
+    name: "MRCI",
+    position: "管理员",
+    introduce:
+    {
+      line1: "abab",
+    },
+   contact: [
+      {
+        icon: "",
+        link: "",
+      },
+  },
   {
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=2117015126&s=640",
     name: "233laoliu",
