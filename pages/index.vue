@@ -212,6 +212,7 @@ const members = [
         icon: "",
         link: "",
       },
+    ],
   },
   {
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=2117015126&s=640",
