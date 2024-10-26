@@ -5,7 +5,7 @@
                 <div class="flex items-center gap-10">
                     <NuxtLink to="/" class="flex items-center gap-3">
                         <!-- eslint-disable-next-line vue/html-self-closing -->
-                        <img src="https://resource.neokoni.moe/craft233/img/craft233_logo.svg" fit="contain"
+                        <img src="https://res.neokoni.ink/craft233/img/craft233_logo.svg" fit="contain"
                             alt="Company Logo" title="Company Logo" class="h-6 object-contain lg:h-8" />
                         <!-- <span class="font-semibold lg:text-lg">Craft233</span> -->
                     </NuxtLink>
@@ -92,7 +92,7 @@
                 <div class="col-span-full pb-10 lg:col-span-2">
                     <NuxtLink to="/" class="flex items-center gap-3">
                         <!-- eslint-disable-next-line vue/html-self-closing -->
-                        <img src="https://resource.neokoni.moe/craft233/img/craft233_logo.svg" fit="contain"
+                        <img src="https://res.neokoni.ink/craft233/img/craft233_logo.svg" fit="contain"
                             alt="Company Logo" title="Company Logo" class="h-7 object-contain lg:h-10" />
                         <span class="text-xl font-semibold">Craft233</span>
                     </NuxtLink>
