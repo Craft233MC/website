@@ -118,7 +118,7 @@ export default defineNuxtConfig({
         },
         {
           itemprop: "image",
-          content: "https://resource.neokoni.moe/craft233/img/icon_main.png",
+          content: "https://rese.neokoni.ink/craft233/img/icon_main.png",
         },
         {
           itemprop: "description",
