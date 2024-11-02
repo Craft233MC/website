@@ -7,10 +7,13 @@
             <slot name="description">
                 <div class="flex w-full justify-center">
                     <div class="space-y-2">
-                        <UiSkeleton class="h-4 w-max-900" id="skelet1" />
-                        <span id="desc"></span>
-                        <UiSkeleton class="h-4 w-max-900" id="skelet2" />
-                        <UiSkeleton class="h-4 w-max-900" id="skelet3" />
+                        <p class="text-lg text-muted-foreground lg:text-xl">显示打开此页面时各服务器的状态
+                            <p id="status_text" class="text-lg text-muted-foreground lg:text-xl">获取中</p>
+                        </p>
+                        <div v-for="s in serverAddressList">
+                            <UiSkeleton :id="s.id + '-Skeleton'" class="h-4 w-max-900"/>
+                            <p :id="s.id + '-Text'" class="text-lg text-muted-foreground lg:text-xl"></p>
+                        </div>
                     </div>
                 </div>
 
@@ -41,53 +44,110 @@
 <script lang="ts" setup>
 import '~/assets/css/global.css'
 import axios from 'axios';
-import { reactive } from 'vue';
-import Description from '~/components/Ui/Alert/Description.vue';
 
 // 获取玩家数
-async function getServerState(): Promise<string> {
-    const infoVelocity = await axios.get('https://api.mcsrvstat.us/3/mc.craft233.top');
-    const playersNumVelocity = infoVelocity.data.players.online;
-    const playersVelocity: number = playersNumVelocity as number;
-    var players = playersVelocity; //所有子服的玩家数
-
-    const info = await axios.get('https://api.mcsrvstat.us/3/mc.craft233.top');
-    var status = info.data.online; // 获取在线状态
-    if (status == "true") {// 判断在线状态
-        var serverStatus = '<p class="text-lg text-muted-foreground lg:text-xl" style="color:red;">离线&nbsp</p>';
-        var online = 'false';
-    } else {
-        var serverStatus = '<p class="text-lg text-muted-foreground lg:text-xl text-primary">在线</p>';
-        var online = 'true';
+async function getServerStatus() {
+    // 初始记录值，用于判断是否所有服务器都在线
+    let onlineServers = 0
+    // 获取用于显示检测状态的元素
+    const statusGetterText = document.getElementById("status_text")
+    // 使用循环进行获取
+    for (let i = 0; i < serverAddressList.length; i++) {
+        // api地址
+        const apiAddress = "https://api.mcsrvstat.us/3/"
+        // 组合为正确的api服务器请求地址
+        const serverInfo = await axios.get(apiAddress + await serverAddressList[i].address)
+        // 定义初始空时的值
+        let serverStatus = "Null"
+        let playerNum = "0"
+        let serverVer = "Null"
+        // 不在线就没必要再转了
+        if (serverInfo.data.online == true) {
+            // 获取在线人数
+            if (serverAddressList[i].id == "oases") {// oases有录像，会计入用于录像的假人实体，因此单独取出并除2
+                playerNum = (serverInfo.data.players.online / 2).toString();
+            }else{
+                playerNum = serverInfo.data.players.online
+            }
+            // 处理服务端类型(Leaves, Fabric, Forge等等)
+            if (serverAddressList[i].serverType == "Fabric"){
+                serverVer = "Fabric " + serverInfo.data.version
+            }
+            else{
+                serverVer = serverInfo.data.version
+            }
+            // 在线状态
+            serverStatus = "在线"
+            onlineServers++ // 服务器在线，记录下来
+        }else {
+            // 离线服务器直接跳过从检测中赋值
+            serverStatus = "离线"
+            playerNum = "0"
+            serverVer = "无法获取"
+        }
+        // 获取当前检测服务器对应的显示元素
+        const skeleton = document.getElementById(serverAddressList[i].id + "-Skeleton")
+        const status = document.getElementById(serverAddressList[i].id + "-Text")
+        // 更改显示状态
+        skeleton?.parentNode?.removeChild(skeleton)
+        if (i == 0) {// 这里是检测代理端的，显示出来会不太一样，所以改写文字
+            if(status) {status.innerText = serverAddressList[i].name + ": " + serverStatus + " | 总在线人数" + playerNum}
+        }else{// 正常的服务器的显示
+            if(status) {status.innerText = serverAddressList[i].name + ": " + serverStatus + " | 在线人数" + playerNum + " | 服务器版本:" + serverVer}
+        }
     }
-    //获取各子服版本
-    const infoOases = await axios.get('https://api.mcsrvstat.us/3/mc.craft233.top:10002');
-    const infoLogin = await axios.get('https://api.mcsrvstat.us/3/mc.craft233.top:10001');
-
-    //汇集输出结果，用于填充于p
-    if (online == 'true') {
-        var sStatus = '<p class="text-lg text-muted-foreground lg:text-xl">当前服务器状态：' + serverStatus + '<p class=" text-lg text-muted-foreground lg:text-xl">' + "在线人数：" + players + "&nbsp|&nbsp" + "服务端版本：" + "登陆服：" + infoLogin.data.version + "&nbsp|&nbspOases：" + infoOases.data.version + "</p>";
-    } else {
-        var sStatus = '<p class=" text-lg text-muted-foreground lg:text-xl">当前服务器状态：' + serverStatus;
+    // 更改显示检测状态与结果的文字
+    if (onlineServers == 0){// 一直没加过数，无在线
+        if (statusGetterText) {statusGetterText.innerText = "坏极了，全部离线！"}
+        statusGetterText?.classList.add("text-red-500")
+    }else if (onlineServers == serverAddressList.length){// 数值一样，都在线
+        if (statusGetterText) {statusGetterText.innerText = "全部在线！"}
+        statusGetterText?.classList.add("text-green-500")
+    }else{ // 数值不一样，有离线
+        if (statusGetterText) {statusGetterText.innerText = "有些家伙在睡觉！"}
+        statusGetterText?.classList.add("text-yellow-500")
     }
-    return sStatus
 }
+
+
+async function getAddressByPort(portNum: number){
+    const address = "mc.craft233.top:" + portNum
+    return address
+}
+
+const serverAddressList = [
+    {
+        name: "velocity代理",
+        address: getAddressByPort(25565),
+        id: "velocity",
+        serverType: "Velocity"
+    },
+    {
+        name: "Login登陆服",
+        address: getAddressByPort(10001),
+        id: "login",
+        serverType: "Leaves"
+    },
+    {
+        name: "Oases主生存",
+        address: getAddressByPort(10002),
+        id: "oases",
+        serverType: "Leaves"
+    },
+    {  
+        name: "mixes模组服",
+        address: getAddressByPort(10003),
+        id: "mixes",
+        serverType: "Fabric"
+    }
+]
+
 const obj = reactive({
     title: '加入服务器',
 })
 
 onMounted(async () => {
-    var asd = await getServerState()
-    document.getElementById("desc").innerHTML = asd
-    if (document.getElementById("desc").innerHTML !== "") {
-        var skelet1 = document.getElementById("skelet1")
-        skelet1?.parentNode?.removeChild(skelet1)
-        var skelet2 = document.getElementById("skelet2")
-        skelet2?.parentNode?.removeChild(skelet2)
-        var skelet3 = document.getElementById("skelet3")
-        skelet3?.parentNode?.removeChild(skelet3)
-    }
-
+    getServerStatus()
 })
 
 const step = [
