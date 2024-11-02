@@ -14,8 +14,7 @@
         </UiContainer>
         <UiContainer class="">
 
-            <!-- 真要手工改的地方了 md:grid-cols-2(有两个及更多link时加入下方class) grid-cols-3(有三个及更多link时加入下方class) -->
-            <section class="grid grid-cols-1 gap-10 lg:gap-y-12 md:grid-cols-2">
+            <section class="grid grid-cols-1 gap-10 lg:gap-y-12 md:grid-cols-3">
                 <template v-for="l in links">
 
                     <div class="flex flex-col items-center pt-2 pb-2">
@@ -54,6 +53,16 @@ const links = [
         {
             line1: "MCJPG集体宣传组织",
             line2: "一个致力于Minecraft技术交流和服务器宣传的新兴组织",
+        },
+
+    },
+    {
+        avatar: "https://avatars.githubusercontent.com/u/177510197?s=200&v=4",
+        link: "https://com.mcjpg.org/",
+        name: "MCJPG",
+        introduce:
+        {
+            line1: "",
         },
 
     },
