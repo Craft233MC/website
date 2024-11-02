@@ -100,12 +100,15 @@ async function getServerStatus() {
     if (onlineServers == 0){// 一直没加过数，无在线
         if (statusGetterText) {statusGetterText.innerText = "坏极了，全部离线！"}
         statusGetterText?.classList.add("text-red-500")
+        statusGetterText?.classList.remove("text-muted-foreground")
     }else if (onlineServers == serverAddressList.length){// 数值一样，都在线
         if (statusGetterText) {statusGetterText.innerText = "全部在线！"}
         statusGetterText?.classList.add("text-green-500")
+        statusGetterText?.classList.remove("text-muted-foreground")
     }else{ // 数值不一样，有离线
         if (statusGetterText) {statusGetterText.innerText = "有些家伙在睡觉！"}
         statusGetterText?.classList.add("text-yellow-500")
+        statusGetterText?.classList.remove("text-muted-foreground")
     }
 }
 
