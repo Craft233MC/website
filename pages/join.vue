@@ -7,9 +7,9 @@
             <slot name="description">
                 <div class="flex w-full justify-center">
                     <div class="space-y-2">
-                        <p class="text-lg text-muted-foreground lg:text-xl">显示打开此页面时各服务器的状态
-                            <p id="status_text" class="text-lg text-muted-foreground lg:text-xl">获取中</p>
-                        </p>
+                        <p class="text-lg text-muted-foreground lg:text-xl">显示打开此页面时各服务器的状态</p>
+                        <p id="status_text" class="text-lg text-muted-foreground lg:text-xl">获取中</p>
+                        
                         <div v-for="s in serverAddressList">
                             <UiSkeleton :id="s.id + '-Skeleton'" class="h-4 w-max-96"/>
                             <p :id="s.id + '-Text'" class="text-lg text-muted-foreground lg:text-xl"></p>
