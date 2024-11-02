@@ -11,7 +11,7 @@
                             <p id="status_text" class="text-lg text-muted-foreground lg:text-xl">获取中</p>
                         </p>
                         <div v-for="s in serverAddressList">
-                            <UiSkeleton :id="s.id + '-Skeleton'" class="h-4 w-max-900"/>
+                            <UiSkeleton :id="s.id + '-Skeleton'" class="h-4 w-max-96"/>
                             <p :id="s.id + '-Text'" class="text-lg text-muted-foreground lg:text-xl"></p>
                         </div>
                     </div>
