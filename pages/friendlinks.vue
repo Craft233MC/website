@@ -59,7 +59,7 @@ const links = [
     {
         avatar: "https://avatars.githubusercontent.com/u/177510197?s=200&v=4",
         link: "https://com.mcjpg.org/",
-        name: "MCJPG",
+        name: "MCJPG社区",
         introduce:
         {
             line1: "",
