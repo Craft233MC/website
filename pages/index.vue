@@ -156,11 +156,6 @@ const features1 = [
     description: `服务端层支持replay，记录建造过程or获取证据。我们可以提供7天内的replay文件`,
   },
   {
-    icon: "lucide:glasses",
-    title: "VR支持",
-    description: `服务端扩展，支持ViveCraft特性`,
-  },
-  {
     icon: "lucide:mic",
     title: "Voice Chat",
     description: `通过Simple Voice Chat模组，实现游戏里的语音聊天`,
