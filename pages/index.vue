@@ -189,7 +189,7 @@ const members = [
       },
       {
         icon: "lucide:mail",
-        link: "mailto://me@neokoni.moe",
+        link: "mailto://me@neokoni.ink",
       },
     ],
 
