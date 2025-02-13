@@ -195,7 +195,7 @@ const members = [
 
   },
  {
-    avatar: "https://q1.qlogo.cn/g?b=qq&nk=3163455221&s=640",
+    avatar: "https://q1.qlogo.cn/g?b=qq&nk=2139193659&s=640",
     name: "MRCI",
     position: "管理员",
     introduce:
