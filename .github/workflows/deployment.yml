@@ -26,16 +26,13 @@ jobs:
       - name: build website file
         run: npm run generate
 
-      - name: cd output dir
-        run: cd .output/public 
-
       - name: SSH Server Deploy
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          source: .
+          source: .output/public/*
           target: /opt/1panel/apps/openresty/openresty/www/sites/www.craft233.top/index/
           rm: true
           
