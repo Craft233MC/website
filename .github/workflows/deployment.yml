@@ -27,10 +27,12 @@ jobs:
         run: npm run generate
 
       - name: SSH Server Deploy
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@0.1.7
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           source: .output/public/
           target: /opt/1panel/apps/openresty/openresty/www/sites/www.craft233.top/index/
+          rm: true
+          
