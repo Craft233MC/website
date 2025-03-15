@@ -17,11 +17,13 @@ jobs:
       - name: checkout source
         uses: actions/checkout@v4
 
-      - name: install dep
-        run: |
-          sudo apt update
-          sudo apt install nodejs
-          npm install
+      - name: setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          
+      - name: install nodejs depends
+        run: npm install
 
       - name: build website file
         run: npm run generate
