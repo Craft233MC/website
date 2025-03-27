@@ -56,6 +56,16 @@ const links = [
         },
 
     },
+    {
+        avatar: "https://www.furcraft.top/icon.png",
+        link: "https://www.furcraft.top",
+        name: "FurCraft",
+        introduce:
+        {
+            line1: "在方块世界中，与毛毛共绘未来",
+        },
+
+    },
 ];
 
 
