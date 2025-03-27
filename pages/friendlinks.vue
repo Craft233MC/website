@@ -72,7 +72,7 @@ const links = [
 // 页面标题
 useHead({
     titleTemplate: (titleChunk) => {
-        return titleChunk ? `` : '友情链接 | Craft233';
+        return titleChunk ? `` : 'Craft233 - 友情链接';
     }
 })
 </script>

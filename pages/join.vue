@@ -198,7 +198,7 @@ const step = [
 // 页面标题
 useHead({
     titleTemplate: (titleChunk) => {
-        return titleChunk ? `` : '加入服务器 | Craft233';
+        return titleChunk ? `` : 'Craft233 - 加入服务器';
     }
 })
 </script>

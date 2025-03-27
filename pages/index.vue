@@ -246,7 +246,7 @@ const members = [
 // 页面标题
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? '' : '小屋 | Craft233';
+    return titleChunk ? '' : 'Craft233的小屋';
   }
 })
 

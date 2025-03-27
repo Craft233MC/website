@@ -70,7 +70,7 @@ const type = [
 
 useHead({
     titleTemplate: (titleChunk) => {
-        return titleChunk ? `` : '贡献 | Craft233';
+        return titleChunk ? `` : 'Craft233 - 贡献';
     }
 })
 </script>

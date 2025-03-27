@@ -59,7 +59,7 @@ const history = [
 // 页面标题
 useHead({
     titleTemplate: (titleChunk) => {
-        return titleChunk ? `` : '获取存档 | Craft233';
+        return titleChunk ? `` : 'Craft233 - 获取存档';
     }
 })
 </script>
