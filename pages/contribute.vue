@@ -42,15 +42,6 @@ const type = [
         class: "bg-black color-white",
     },
     {
-        title: "帮助改进服务端",
-        description: "部分子服务器的配置文件是公开的，您可以在此帮助我们更改服务端，提出issue,pr等。",
-        link: "https://gitcode.com/Craft233MC",
-        icon: "lucide:git-pull-request-create-arrow",
-        btm_text: "GitCode",
-        class: "",
-        variant: "destructive",
-    },
-    {
         title: "帮助其他玩家",
         description: "欢迎加入我们的交流群，帮助解决其他玩家的困惑，我们欢迎大家回答问题或提供支持。",
         link: "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=QofGtNhyZdlU0kVZtr81sGxVDMzKGkkt&authKey=59dPS936wuYm%2Bg4qHFkMdo8IYTcdD6Jp8Q9kBb2Mmv8i7APEm0Ms2373ztiW97wE&noverify=0&group_code=830277457",
