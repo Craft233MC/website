@@ -182,10 +182,9 @@
             <section class="mt-12 flex flex-col justify-between gap-5 border-t pt-8 lg:mt-16 lg:flex-row">
                 <p class="text-muted-foreground">
                     &copy; 2023-{{ new Date().getFullYear() }} Craft233. All rights reserved.<br>
-                    ICP备案号:&nbsp
+                    <a href="https://icp.gov.moe/?keyword=20232336" target="_blank">萌ICP备20232336号</a><br>
                     <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2024074700号-1</a><br>
-                    <a href="https://icp.gov.moe/?keyword=20232336" target="_blank">萌ICP备20232336号</a>
-                    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank">川公网安备51130402000151号</a><br>
+                    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank">川公网安备51130402000151号</a>
                 </p>
                 <div class="flex items-center gap-2">
                     <Icon name="lucide:github" class="h-7 w-7" />
