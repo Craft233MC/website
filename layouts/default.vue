@@ -170,7 +170,7 @@
                             </li>
                             <li>
                                 <NuxtLink class="font-semibold hover:text-primary" target="_blank"
-                                    to="https://afdian.com/a/craft233/">爱发电
+                                    to="https://afdian.com/a/neokoni/">爱发电
                                     <Icon name="lucide:external-link" class="h-4 w-4" />
                                 </NuxtLink>
                             </li>
