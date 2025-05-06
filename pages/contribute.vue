@@ -52,7 +52,7 @@ const type = [
     {
         title: "提供资金上的支持",
         description: "Craft233 使用爱发电来管理各种日常开支，其中大部分与基础设施有关。",
-        link: "https://afdian.com/a/craft233/",
+        link: "https://afdian.com/a/neokoni/",
         icon: "lucide:hand-heart",
         btm_text: "爱发电",
         class: "",
