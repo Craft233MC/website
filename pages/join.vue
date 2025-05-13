@@ -63,12 +63,9 @@ async function getServerStatus() {
         let serverVer = "Null"
         // 不在线就没必要再转了
         if (serverInfo.data.online == true) {
-            // 获取在线人数
-            if (serverAddressList[i].id == "oases") {// oases有录像，会计入用于录像的假人实体，因此单独取出并除2
-                playerNum = (serverInfo.data.players.online / 2).toString();
-            }else{
-                playerNum = serverInfo.data.players.online
-            }
+           try {
+             // 获取在线人数
+             playerNum = serverInfo.data.players.online
             // 处理服务端类型(Leaves, Fabric, Forge等等)
             if (serverAddressList[i].serverType == "Fabric"){
                 serverVer = "Fabric " + serverInfo.data.version
@@ -79,6 +76,11 @@ async function getServerStatus() {
             // 在线状态
             serverStatus = "在线"
             onlineServers++ // 服务器在线，记录下来
+           } catch (e) {
+            serverStatus = "离线"
+            playerNum = "0"
+            serverVer = "无法获取"
+           }
         }else {
             // 离线服务器直接跳过从检测中赋值
             serverStatus = "离线"
@@ -114,7 +116,7 @@ async function getServerStatus() {
 
 
 async function getAddressByPort(portNum: number){
-    const address = "mc.craft233.top:" + portNum
+    const address = "v4.mc.craft233.top:" + portNum
     return address
 }
 
@@ -126,22 +128,22 @@ const serverAddressList = [
         serverType: "Velocity"
     },
     {
-        name: "Login登陆服",
-        address: getAddressByPort(10001),
-        id: "login",
-        serverType: "Leaves"
+        name: "Lobby大厅服",
+        address: getAddressByPort(41001),
+        id: "lobby",
+        serverType: "Paper"
     },
     {
-        name: "Oases主生存",
-        address: getAddressByPort(10002),
-        id: "oases",
-        serverType: "Leaves"
+        name: "Terra粘液生存服务器",
+        address: getAddressByPort(41002),
+        id: "Terra",
+        serverType: "Luminol"
     },
     {  
-        name: "mixes模组服",
-        address: getAddressByPort(10003),
-        id: "mixes",
-        serverType: "Fabric"
+        name: "ABlock单方快生存服务器",
+        address: getAddressByPort(41003),
+        id: "ablock",
+        serverType: "Leaves"
     }
 ]
 

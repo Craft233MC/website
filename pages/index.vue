@@ -8,11 +8,11 @@
           <h3 class="text-3xl font-semibold lg:text-5xl ">
             Craft233
           </h3>
-          <h2 class="mt-8 flex flex-col text-2xl text-muted-foreground">简单纯粹，在未知中探索。在尝试中找到尽可能优的生存体验。与玩家一起，携手出发。</h2>
+          <h2 class="mt-8 flex flex-col text-2xl text-muted-foreground">全新出发，让简化带来原生态的生存体验。在尝试中找到尽可能优的生存体验。与玩家一起，携手出发。</h2>
           <div class="grid mt-8 md:flex w-full shrink-0 flex-col-reverse gap-3 md:mt-12 lg:w-auto lg:flex-row">
             <UiButton size="lg" class="w-full shrink-0 whitespace-nowrap md:w-auto" to="join" v-wave>加入</UiButton>
             <a href="https://docs.craft233.top" target="_blank">
-              <UiButton size="lg" class="w-full lg:w-auto" variant="outline">文档
+              <UiButton size="lg" class="w-full lg:w-auto" variant="outline">文档站
                 <Icon name="lucide:external-link" class="h-4 w-4" />
               </UiButton>
             </a>
@@ -106,7 +106,7 @@ onMounted(async () => {
   } else {
     var playerInfo = "";
   }
-  document.getElementById('playerdata').textContent = playerInfo
+  document.getElementById('playerdata')!.textContent = playerInfo
 })
 
 const features = [
@@ -118,16 +118,57 @@ const features = [
     imageUrl:
       "/assets/img/index/town.png",
   },
+  {
+    title: "原版生存",
+    icon: "heroicons:chat-bubble-left-right",
+    description:
+      `由原版Luminol驱动的原版粘液生存服务器, 在此重新出发! `,
+    imageUrl:
+      "/assets/img/index/hub.png",
+  },
+  {
+    title: "单方快生存",
+    icon: "heroicons:chat-bubble-left-right",
+    description:
+      `原版经典单方快生存服务器, 由Leaves驱动. 走进空岛的世界, 探索不一样的体验`,
+    imageUrl:
+      "/assets/img/index/oneblock.png",
+  },
 ];
 
 // 特点部分
 
 const features1 = [
   {
+    icon: "lucide:cat",
+    title: "基岩版头颅显示",
+    description: `对基岩版物品栏内完整的插件头颅物品显示, 背包不再算是Steve头颅`,
+  },
+  {
     icon: "lucide:cable",
-    title: "版本兼任",
+    title: "版本兼容",
     description:
       "支持Java版1.20及之后的版本以及基岩版的最新正式版",
+  },
+  {
+    icon: "lucide:brush-cleaning",
+    title: "删繁就简",
+    description: "相比于二周目，第三周目删去了臃肿感知不大的插件，返璞归真"
+  },
+  {
+    icon: "lucide:circle-arrow-up",
+    title: "滚动更新",
+    description: `当插件或模组支持, 我们会追随最新的Minecraft版本`,
+  },
+  {
+    icon: "lucide:leaf",
+    title: "线程优化",
+    description: "主生存服借助Folia提升资源利用率, 减少卡顿"
+  },
+  {
+    icon: "lucide:cloud-sun",
+    title: "原生运行",
+    description: "手动修改源码将粘液科技带回Folia平台, 不依靠修改Scheduler服务端, 提升稳定性"
   },
   {
     icon: "lucide:shield-check",
@@ -136,35 +177,15 @@ const features1 = [
       "每日凌晨自动备份数据，保证数据安全",
   },
   {
-    icon: "lucide:circle-arrow-up",
-    title: "版本新",
-    description: `当插件或模组支持，我们会追随最新的Minecraft版本`,
+    icon: "lucide:lock",
+    title: "去/l化",
+    description: "使用主流账号/外置登陆验证，不再依靠皮肤恢复和进服密码"
   },
   {
-    icon: "lucide:git-pull-request-arrow",
-    title: "基于git的修改申请",
-    description: `在我们的GitCode仓库中，通过pull request合并您对服务端的修改`,
+    icon: "lucide:lock",
+    title: "开源",
+    description: "所有经过修改的插件均开源在GitHub平台"
   },
-  {
-    icon: "lucide:cat",
-    title: "基岩版头颅显示",
-    description: `对基岩版物品栏内完整的插件头颅物品显示，背包不再算是Steve头颅`,
-  },
-  {
-    icon: "lucide:cctv",
-    title: "服务端replay",
-    description: `服务端层支持replay，记录建造过程or获取证据。我们可以提供7天内的replay文件`,
-  },
-  {
-    icon: "lucide:mic",
-    title: "Voice Chat",
-    description: `通过Simple Voice Chat模组，实现游戏里的语音聊天`,
-  },
-  {
-    icon: "lucide:shirt",
-    title: "皮肤自定义",
-    description: `自建皮肤站，通过/bskin设置自定义皮肤`,
-  }
 ];
 
 // 团队部分
@@ -193,21 +214,6 @@ const members = [
       },
     ],
 
-  },
- {
-    avatar: "https://q1.qlogo.cn/g?b=qq&nk=2139193659&s=640",
-    name: "MRCI",
-    position: "管理员",
-    introduce:
-    {
-      line1: "abab",
-    },
-   contact: [
-      {
-        icon: "",
-        link: "",
-      },
-    ],
   },
   {
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=2117015126&s=640",
@@ -246,7 +252,7 @@ const members = [
 // 页面标题
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? '' : 'Craft233的小屋';
+    return titleChunk ? '' : 'Craft233 - 三周目启动';
   }
 })
 

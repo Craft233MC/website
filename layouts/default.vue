@@ -13,13 +13,13 @@
                         <UiNavigationMenuList class="gap-2">
                             <UiNavigationMenuItem>
                                 <UiNavigationMenuLink as-child>
-                                    <UiButton to="/" variant="ghost" size="sm">主页</UiButton>
+                                    <UiButton to="/" variant="ghost" size="sm">首页</UiButton>
                                 </UiNavigationMenuLink>
                             </UiNavigationMenuItem>
                             <UiNavigationMenuItem>
                                 <UiNavigationMenuLink as-child>
                                     <a href="https://docs.craft233.top" target="_blank">
-                                        <UiButton variant="ghost" size="sm">文档
+                                        <UiButton variant="ghost" size="sm">文档站
                                             <Icon name="lucide:external-link" class="h-4 w-4" />
                                         </UiButton>
                                     </a>
@@ -34,6 +34,16 @@
                             <UiNavigationMenuItem>
                                 <UiNavigationMenuLink as-child>
                                     <UiButton to="/contribute" variant="ghost" size="sm">贡献</UiButton>
+                                </UiNavigationMenuLink>
+                            </UiNavigationMenuItem>
+                            <UiNavigationMenuItem>
+                                <UiNavigationMenuLink as-child>
+                                    <UiButton to="/rules" variant="ghost" size="sm">规则</UiButton>
+                                </UiNavigationMenuLink>
+                            </UiNavigationMenuItem>
+                            <UiNavigationMenuItem>
+                                <UiNavigationMenuLink as-child>
+                                    <UiButton to="/sponors" variant="ghost" size="sm">赞助者们</UiButton>
                                 </UiNavigationMenuLink>
                             </UiNavigationMenuItem>
                             <UiNavigationMenuItem>
@@ -59,16 +69,20 @@
 
                                     <UiScrollArea class="h-full p-5">
                                         <div class="flex flex-col gap-2">
-                                            <UiButton variant="ghost" class="justify-start text-base" to="/">主页
+                                            <UiButton variant="ghost" class="justify-start text-base" to="/">首页
                                             </UiButton>
                                             <a href="https://docs.craft233.top" target="_blank">
-                                                <UiButton variant="ghost" class="justify-start text-base">文档
+                                                <UiButton variant="ghost" class="justify-start text-base">文档站
                                                     <Icon name="lucide:external-link" class="h-4 w-4" />
                                                 </UiButton>
                                             </a>
                                             <UiButton variant="ghost" class="justify-start text-base" to="/archive">存档
                                             </UiButton>
                                             <UiButton variant="ghost" class="justify-start text-base" to="/contribute">贡献
+                                            </UiButton>
+                                            <UiButton variant="ghost" class="justify-start text-base" to="/rules">规则
+                                            </UiButton>
+                                            <UiButton variant="ghost" class="justify-start text-base" to="/sponors">赞助者们
                                             </UiButton>
                                             <UiButton variant="ghost" class="justify-start text-base" to="/friendlinks">友情链接
                                             </UiButton>
@@ -158,13 +172,7 @@
                         <ul class="flex flex-col gap-3">
                             <li>
                                 <NuxtLink class="font-semibold hover:text-primary" target="_blank"
-                                    to="https://skin.craft233.top/">Craft233 Skin
-                                    <Icon name="lucide:external-link" class="h-4 w-4" />
-                                </NuxtLink>
-                            </li>
-                            <li>
-                                <NuxtLink class="font-semibold hover:text-primary" target="_blank"
-                                    to="https://status.craft233.top/status/craft233">外部监测站
+                                    to="https://status.craft233.top">外部监测站
                                     <Icon name="lucide:external-link" class="h-4 w-4" />
                                 </NuxtLink>
                             </li>
@@ -187,8 +195,12 @@
                     <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank">川公网安备51130402000151号</a>
                 </p>
                 <div class="flex items-center gap-2">
+                <a href="https://github.com/Craft233MC" target="_blank">
                     <Icon name="lucide:github" class="h-7 w-7" />
+                </a>
+                <a href="https://space.bilibili.com/3546655496342120" target="_blank">
                     <Icon name="ri:bilibili-line" class="h-7 w-7" />
+                </a>
                 </div>
             </section>
         </UiContainer>
