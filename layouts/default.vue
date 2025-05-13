@@ -43,7 +43,7 @@
                             </UiNavigationMenuItem>
                             <UiNavigationMenuItem>
                                 <UiNavigationMenuLink as-child>
-                                    <UiButton to="/sponors" variant="ghost" size="sm">赞助者们</UiButton>
+                                    <UiButton to="/sponsor" variant="ghost" size="sm">赞助者们</UiButton>
                                 </UiNavigationMenuLink>
                             </UiNavigationMenuItem>
                             <UiNavigationMenuItem>
@@ -82,7 +82,7 @@
                                             </UiButton>
                                             <UiButton variant="ghost" class="justify-start text-base" to="/rules">规则
                                             </UiButton>
-                                            <UiButton variant="ghost" class="justify-start text-base" to="/sponors">赞助者们
+                                            <UiButton variant="ghost" class="justify-start text-base" to="/sponsor">赞助者们
                                             </UiButton>
                                             <UiButton variant="ghost" class="justify-start text-base" to="/friendlinks">友情链接
                                             </UiButton>
