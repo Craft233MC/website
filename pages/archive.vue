@@ -42,7 +42,7 @@ const history = [
         imageUrl:
             "/assets/img/week1/2023-08-31_00.03.12.png",
         data: "2023.7.10--2024.2.24",
-        downloadUrl: "https://pan.neokoni.ink/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%20%7C%20AliDrive/Craft233/%E5%AD%98%E6%A1%A3/week1/backup-2024-02-23(2).zip",
+        downloadUrl: "",
     },
     {
         title: "第二周目:Cube",
@@ -51,7 +51,16 @@ const history = [
         imageUrl:
             "/assets/img/week2/cube/cube-screenshot-from-bili.png",
         data: "2024.3.10--2024.8.3",
-        downloadUrl: "https://pan.neokoni.ink/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%20%7C%20AliDrive/Craft233/%E5%AD%98%E6%A1%A3/week2/cube/cube-backup-2024-08-03-22-32.tar.xz",
+        downloadUrl: "",
+    },
+    {
+        title: "第二周目",
+        description:
+            "第二周目的非生电服存档",
+        imageUrl:
+            "/assets/img/week2/town.png",
+        data: "2024.3.10--2025.4.2",
+        downloadUrl: "",
     },
 ];
 

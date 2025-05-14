@@ -6,7 +6,7 @@
                     <NuxtLink to="/" class="flex items-center gap-3">
                         <!-- eslint-disable-next-line vue/html-self-closing -->
                         <img src="https://res.neokoni.ink/craft233/img/craft233_logo.svg" fit="contain"
-                            alt="Company Logo" title="Company Logo" class="h-6 object-contain lg:h-8" />
+                            alt="Craft233 Logo" title="Craft233 Logo" class="h-6 object-contain lg:h-8" />
                         <!-- <span class="font-semibold lg:text-lg">Craft233</span> -->
                     </NuxtLink>
                     <UiNavigationMenu as="nav" class="hidden items-center justify-start gap-8 lg:flex">

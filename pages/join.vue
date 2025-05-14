@@ -162,12 +162,7 @@ const step = [
         description:
             "",
         imageUrl:
-            "/assets/join/1.png",
-        points: [
-            { text: "Leverage automation to move fast" },
-            { text: "Always give customers a human to chat to" },
-            { text: "Automate customer support and close leads faster" },
-        ],
+            "https://docs.craft233.top/assets/JavaHomePage.ChXN-PvP.png"
     },
     {
         title: "点击添加服务器",
@@ -175,26 +170,24 @@ const step = [
         description:
             "",
         imageUrl:
-            "/assets/join/2.png",
-        points: [
-            { text: "Keep your customers in the loop with live chat" },
-            { text: "Embed help articles right on your website" },
-            { text: "Customers never have to leave the page to find an answer" },
-        ],
+            "https://docs.craft233.top/assets/javaServerList.ClEIZ0Kn.png",
     },
     {
         title: "填入信息并保存",
         icon: "tabler:circle-number-3",
         description: ``,
         imageUrl:
-            "/assets/join/3.png",
-        points: [
-            { text: "Filter, export, and drilldown on the data quickly" },
-            { text: "Save, schedule, and automate reports to your inbox" },
-            { text: "Connect the tools you already use with 100+ integrations" },
-        ],
+            "https://docs.craft233.top/assets/javaAddServer.C_XH7osL.png",
     },
 ];
+
+function getImageNodeByWidth(node: String){
+    if (window.innerWidth <= 1024) {
+        return "s.peImage"
+    } else{
+        return "s.jeImage"
+    }
+}
 
 
 // 页面标题

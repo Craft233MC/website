@@ -110,14 +110,14 @@ onMounted(async () => {
 })
 
 const features = [
-  {
-    title: "友好的氛围",
-    icon: "heroicons:chat-bubble-left-right",
-    description:
-      `友善的玩家与管理团队解决您遇到的问题，立即加入，与其他<span id="playerdata"></span>玩家一同创建家园`,
-    imageUrl:
-      "/assets/img/index/town.png",
-  },
+  // {
+  //   title: "友好的氛围",
+  //   icon: "heroicons:chat-bubble-left-right",
+  //   description:
+  //     `友善的玩家与管理团队解决您遇到的问题，立即加入，与其他<span id="playerdata"></span>玩家一同创建家园`,
+  //   imageUrl:
+  //     "/assets/img/index/town.png",
+  // },
   {
     title: "原版生存",
     icon: "heroicons:chat-bubble-left-right",
@@ -178,11 +178,11 @@ const features1 = [
   },
   {
     icon: "lucide:lock",
-    title: "去/l化",
+    title: "去密码化",
     description: "使用主流账号/外置登陆验证，不再依靠皮肤恢复和进服密码"
   },
   {
-    icon: "lucide:lock",
+    icon: "lucide:terminal",
     title: "开源",
     description: "所有经过修改的插件均开源在GitHub平台"
   },
@@ -198,7 +198,7 @@ const members = [
   {
     avatar: "https://q1.qlogo.cn/g?b=qq&nk=3335792980&s=640",
     name: "Neokoni",
-    position: "服主",
+    position: "服主, 技术, 开发",
     introduce:
     {
       line1: "每天都在摸鱼的鸽子",

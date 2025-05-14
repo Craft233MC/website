@@ -1,5 +1,10 @@
+:root {
+    --max-content-width: 1280px;
+}
+
+
 .view {
-    max-width: 1280px;
+    max-width: var(--max-content-width);
     margin: 0 auto;
     position: relative;
 }
@@ -18,4 +23,8 @@ body{
 }
 .color-white{
     color: white;
+}
+
+.table-max-width{
+    max-width: calc(var(--max-content-width) - 500px);
 }

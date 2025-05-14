@@ -59,6 +59,7 @@ module.exports = {
         "collapse-up": "collapse-up 0.2s ease-out",
       },
       colors: {
+        theme_green: "#16a34a",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
