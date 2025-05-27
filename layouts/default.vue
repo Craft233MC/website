@@ -163,6 +163,18 @@
                                     <Icon name="lucide:external-link" class="h-4 w-4" />
                                 </NuxtLink>
                             </li>
+                            <li>
+                                <NuxtLink class="font-semibold hover:text-primary" target="_blank"
+                                    to="https://play.mcmod.cn/sv20187552.html">mcMod找服玩
+                                    <Icon name="lucide:external-link" class="h-4 w-4" />
+                                </NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink class="font-semibold hover:text-primary" target="_blank"
+                                    to="https://zh-cn.namemc.com/server/mc.craft233.top">NameMC
+                                    <Icon name="lucide:external-link" class="h-4 w-4" />
+                                </NuxtLink>
+                            </li>
                         </ul>
                     </div>
                 </template>
