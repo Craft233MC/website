@@ -123,7 +123,7 @@ const features = [
     title: "原版生存",
     icon: "heroicons:chat-bubble-left-right",
     description:
-      `由原版Luminol驱动的原版粘液生存服务器, 在此重新出发! `,
+      `由原版Folia系服务端驱动的原版粘液生存服务器, 体验与大部分原版生存服类似，包括常见的家，传送等功能。服务端设置尽可能保持原版特性，已开启可以还原原版特性的所有选项! `,
     imageUrl:
       "/assets/img/index/hub.png",
   },
@@ -131,7 +131,7 @@ const features = [
     title: "单方块生存",
     icon: "heroicons:chat-bubble-left-right",
     description:
-      `原版经典单方块生存服务器, 由Leaves驱动. 走进空岛的世界, 探索不一样的体验`,
+      `原版经典单方块生存服务器, 大部分时间由Leaves驱动，若更新新版本可能会更换一段时间Paper端。不限制生电及机器，除粘液科技外与原版生存差距不大，也尽可能开启了原版特性`,
     imageUrl:
       "/assets/img/index/oneblock.png",
   },
