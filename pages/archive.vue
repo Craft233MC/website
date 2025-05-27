@@ -7,7 +7,7 @@
             <slot name="description">
                 <div class="flex w-full justify-center ">
                     <div class="space-y-2 ">
-                        <span>在此获取往期周目的完整存档文件</span>
+                        <span class="text-lg text-muted-foreground lg:text-xl">在此获取往期周目的完整存档文件</span>
                     </div>
                 </div>
             </slot>

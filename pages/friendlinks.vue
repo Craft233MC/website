@@ -7,7 +7,7 @@
             <slot name="description">
                 <div class="flex w-full justify-center ">
                     <div class="space-y-2 ">
-                        <span>欢迎加入与我们互换友链，在开服方面一起讨论学习，成为友商，共同进步</span>
+                        <span class="text-lg text-muted-foreground lg:text-xl">欢迎加入与我们互换友链，在开服方面一起讨论学习，成为友商，共同进步</span>
                     </div>
                 </div>
             </slot>
