@@ -16,6 +16,7 @@
                 <Icon name="lucide:external-link" class="h-4 w-4" />
               </UiButton>
             </a>
+            <UiButton size="lg" class="w-full shrink-0 whitespace-nowrap md:w-auto" to="rules" variant="outline" v-wave>规则</UiButton>
           </div>
         </div>
       </div>
