@@ -140,7 +140,7 @@ const serverAddressList = [
         serverType: "Luminol"
     },
     {  
-        name: "ABlock单方快生存服务器",
+        name: "ABlock单方块生存服务器",
         address: getAddressByPort(41003),
         id: "ablock",
         serverType: "Leaves"

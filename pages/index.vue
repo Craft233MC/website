@@ -128,10 +128,10 @@ const features = [
       "/assets/img/index/hub.png",
   },
   {
-    title: "单方快生存",
+    title: "单方块生存",
     icon: "heroicons:chat-bubble-left-right",
     description:
-      `原版经典单方快生存服务器, 由Leaves驱动. 走进空岛的世界, 探索不一样的体验`,
+      `原版经典单方块生存服务器, 由Leaves驱动. 走进空岛的世界, 探索不一样的体验`,
     imageUrl:
       "/assets/img/index/oneblock.png",
   },
