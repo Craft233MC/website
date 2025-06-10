@@ -59,7 +59,7 @@ const sponors = [
         name: "233laoliu",
         qqNum: 2117015126,
         message: "可千万别成商业服啊",
-        value: 31.44
+        value: "31.44+50(花火推广)"
     },
     {
         name: "gjyyds",
