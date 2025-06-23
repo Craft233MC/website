@@ -42,7 +42,7 @@ const history = [
         imageUrl:
             "/assets/img/week1/2023-08-31_00.03.12.png",
         data: "2023.7.10--2024.2.24",
-        downloadUrl: "",
+        downloadUrl: "https://www.123912.com/s/81d8Vv-eJGmd",
     },
     {
         title: "第二周目:Cube",
@@ -51,7 +51,7 @@ const history = [
         imageUrl:
             "/assets/img/week2/cube/cube-screenshot-from-bili.png",
         data: "2024.3.10--2024.8.3",
-        downloadUrl: "",
+        downloadUrl: "https://www.123912.com/s/81d8Vv-tJGmd",
     },
     {
         title: "第二周目",
@@ -60,7 +60,7 @@ const history = [
         imageUrl:
             "/assets/img/week2/town.png",
         data: "2024.3.10--2025.4.2",
-        downloadUrl: "",
+        downloadUrl: "https://www.123684.com/s/81d8Vv-iJGmd",
     },
 ];
 
