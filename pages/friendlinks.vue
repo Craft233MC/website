@@ -36,16 +36,6 @@
 
 const links = [
     {
-        avatar: "https://bugcraft.org/upload/favicon.svg",
-        link: "https://bugcraft.org/",
-        name: "BugCraft",
-        introduce:
-        {
-            line1: "There are many bugs to play...",
-        },
-
-    },
-    {
         avatar: "https://avatars.githubusercontent.com/u/177510197?s=200&v=4",
         link: "https://mcjpg.org/",
         name: "MCJPG",
