@@ -92,7 +92,7 @@ const sponors = [
         value: 5
     },
     {
-        name: "Lily46892",
+        name: "Lee",
         qqNum: 3886321682,
         message: "加油，希望越来越好。",
         value: 5
