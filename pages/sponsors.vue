@@ -90,6 +90,12 @@ const sponors = [
         qqNum: 1782531643,
         message: "我很爱这个服务器希望他能一直有",
         value: 5
+    },
+    {
+        name: "Lily46892",
+        qqNum: 3886321682,
+        message: "加油，希望越来越好。",
+        value: 5
     }
 ]
 
