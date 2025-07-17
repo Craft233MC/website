@@ -71,7 +71,7 @@ const sponors = [
         name: "SuMaple",
         qqNum: 652657854,
         message: "希望我们服能越来越好啊！！！",
-        value: 50
+        value: 70
     },
     {
         name: "CREATORKARIMO",
