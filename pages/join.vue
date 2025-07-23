@@ -7,7 +7,7 @@
             <slot name="description">
                 <div class="flex w-full justify-center">
                     <div class="space-y-2">
-                        <p class="text-lg text-muted-foreground lg:text-xl">显示打开此页面时各服务器的状态</p>
+                        <p class="text-lg text-muted-foreground lg:text-xl">显示打开此页面时服务器的状态</p>
                         <p id="status_text" class="text-lg text-muted-foreground lg:text-xl">获取中</p>
                         
                         <div v-for="s in serverAddressList">
@@ -100,7 +100,7 @@ async function getServerStatus() {
     }
     // 更改显示检测状态与结果的文字
     if (onlineServers == 0){// 一直没加过数，无在线
-        if (statusGetterText) {statusGetterText.innerText = "坏极了，全部离线！"}
+        if (statusGetterText) {statusGetterText.innerText = "坏极了，离线！"}
         statusGetterText?.classList.add("text-red-500")
         statusGetterText?.classList.remove("text-muted-foreground")
     }else if (onlineServers == serverAddressList.length){// 数值一样，都在线
@@ -122,28 +122,10 @@ async function getAddressByPort(portNum: number){
 
 const serverAddressList = [
     {
-        name: "velocity代理",
+        name: "Craft233",
         address: getAddressByPort(25565),
         id: "velocity",
         serverType: "Velocity"
-    },
-    {
-        name: "Lobby大厅服",
-        address: getAddressByPort(41001),
-        id: "lobby",
-        serverType: "Paper"
-    },
-    {
-        name: "Terra粘液生存服务器",
-        address: getAddressByPort(41002),
-        id: "Terra",
-        serverType: "Luminol"
-    },
-    {  
-        name: "ABlock单方块生存服务器",
-        address: getAddressByPort(41003),
-        id: "ablock",
-        serverType: "Leaves"
     }
 ]
 
