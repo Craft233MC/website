@@ -5,14 +5,15 @@
                 <h2 class="mb-4 mt-2 text-4xl font-bold lg:mb-6 lg:mt-3 lg:text-5xl">规则区</h2>
             </slot>
             <slot name="description">
-                <div class="flex w-full justify-center ">
+                <div class="flex w-full justify-center px-10">
                     <div class="space-y-2 ">
                         <span class="text-lg text-muted-foreground lg:text-xl">了解服务器内规则以更好地在服务器中游玩</span>
                     </div>
                 </div>
             </slot>
         </UiContainer>
-        <p v-html="serverRules" class="text-lg text-muted-foreground lg:text-xl"> </p>
+        <p v-html="serverRules" class="text-lg text-muted-foreground lg:text-xl
+        px-10"> </p>
     </NuxtLayout>
 </template>
 
