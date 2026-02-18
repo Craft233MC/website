@@ -96,6 +96,12 @@ const sponors = [
         qqNum: 3886321682,
         message: "加油，希望越来越好。",
         value: 5
+    },
+    {
+        name: "cjfd",
+        qqNum: 1599221954,
+        message: "",
+        value: 30
     }
 ]
 
