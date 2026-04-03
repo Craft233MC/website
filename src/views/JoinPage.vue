@@ -1,6 +1,6 @@
 <template>
   <section class="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
-    <div class="rounded-[2rem] border border-white/60 bg-white/75 p-8 shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70 sm:p-10">
+    <div class="rounded-md border border-slate-300 bg-white p-8 dark:border-slate-700 dark:bg-slate-900 sm:p-10">
       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">加入服务器</p>
       <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">{{ joinContent.title }}</h1>
       <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">{{ joinContent.summary }}</p>
@@ -9,7 +9,7 @@
         <div
           v-for="server in joinContent.servers"
           :key="server.name"
-          class="rounded-3xl border border-slate-200 bg-white/90 p-5 dark:border-slate-800 dark:bg-slate-900/80"
+          class="rounded-md border border-slate-300 bg-white p-5 dark:border-slate-700 dark:bg-slate-900"
         >
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
@@ -32,7 +32,7 @@
       <article
         v-for="(step, index) in joinContent.steps"
         :key="step.title"
-        class="overflow-hidden rounded-[2rem] border border-white/60 bg-white/75 shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70"
+        class="overflow-hidden rounded-md border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900"
       >
         <img :src="step.image" :alt="step.title" class="h-56 w-full object-cover" />
         <div class="p-6">

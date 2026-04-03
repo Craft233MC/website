@@ -1,12 +1,12 @@
 <template>
   <section class="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
-    <div class="rounded-[2rem] border border-white/60 bg-white/75 p-8 shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70 sm:p-10">
+    <div class="rounded-md border border-slate-300 bg-white p-8 dark:border-slate-700 dark:bg-slate-900 sm:p-10">
       <p class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">赞助者们</p>
       <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">感谢各位对 Craft233 的信任</h1>
       <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">在此查看已捐赠人员列表及留言。名单按首次捐赠时间排序。</p>
     </div>
 
-    <div class="mt-12 overflow-hidden rounded-[2rem] border border-white/60 bg-white/75 shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70">
+    <div class="mt-12 overflow-hidden rounded-md border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900">
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
           <thead class="bg-slate-50/80 dark:bg-slate-900/70">

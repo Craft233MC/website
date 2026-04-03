@@ -4,14 +4,14 @@ import { pages } from '@/content/siteContent'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', name: 'home', component: () => import('@/pages/HomePage.vue'), meta: { title: pages.home.title } },
-    { path: '/join', name: 'join', component: () => import('@/pages/JoinPage.vue'), meta: { title: pages.join.title } },
-    { path: '/rules', name: 'rules', component: () => import('@/pages/RulesPage.vue'), meta: { title: pages.rules.title } },
-    { path: '/archive', name: 'archive', component: () => import('@/pages/ArchivePage.vue'), meta: { title: pages.archive.title } },
-    { path: '/contribute', name: 'contribute', component: () => import('@/pages/ContributePage.vue'), meta: { title: pages.contribute.title } },
-    { path: '/sponsors', name: 'sponsors', component: () => import('@/pages/SponsorsPage.vue'), meta: { title: pages.sponsors.title } },
-    { path: '/friendlinks', name: 'friendlinks', component: () => import('@/pages/FriendLinksPage.vue'), meta: { title: pages.friendlinks.title } },
-    { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('@/pages/NotFoundPage.vue'), meta: { title: '页面不存在' } },
+    { path: '/', name: 'home', component: () => import('@/views/HomePage.vue'), meta: { title: pages.home.title } },
+    { path: '/join', name: 'join', component: () => import('@/views/JoinPage.vue'), meta: { title: pages.join.title } },
+    { path: '/rules', name: 'rules', component: () => import('@/views/RulesPage.vue'), meta: { title: pages.rules.title } },
+    { path: '/archive', name: 'archive', component: () => import('@/views/ArchivePage.vue'), meta: { title: pages.archive.title } },
+    { path: '/contribute', name: 'contribute', component: () => import('@/views/ContributePage.vue'), meta: { title: pages.contribute.title } },
+    { path: '/sponsors', name: 'sponsors', component: () => import('@/views/SponsorsPage.vue'), meta: { title: pages.sponsors.title } },
+    { path: '/friendlinks', name: 'friendlinks', component: () => import('@/views/FriendLinksPage.vue'), meta: { title: pages.friendlinks.title } },
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('@/views/NotFoundPage.vue'), meta: { title: '页面不存在' } },
   ],
   scrollBehavior() {
     return { top: 0 }

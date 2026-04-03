@@ -32,7 +32,7 @@
 - [src/App.vue](src/App.vue)：根组件，只负责挂载站点外壳和路由视图。
 - [src/components/SiteShell.vue](src/components/SiteShell.vue)：全站公共壳，包含顶部导航、移动端菜单、主题切换和页脚。
 - [src/router.ts](src/router.ts)：路由定义与页面标题更新。
-- [src/pages/*](src/pages)：按页面拆分的独立视图。
+- [src/views/*](src/views)：按页面拆分的独立路由视图（Vue 常见目录约定）。
 - [src/styles/main.css](src/styles/main.css)：全局样式、字体和主题变量。
 
 ## 资源策略

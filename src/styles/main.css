@@ -6,18 +6,12 @@
 
 :root {
   color-scheme: light;
-  --page-bg:
-    radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 24%),
-    linear-gradient(180deg, #f8fafc 0%, #eef2ff 48%, #f8fafc 100%);
+  --page-bg: #f8fafc;
 }
 
 .dark {
   color-scheme: dark;
-  --page-bg:
-    radial-gradient(circle at top left, rgba(16, 185, 129, 0.16), transparent 28%),
-    radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 24%),
-    linear-gradient(180deg, #020617 0%, #081120 48%, #020617 100%);
+  --page-bg: #020617;
 }
 
 html {

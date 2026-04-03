@@ -20,34 +20,31 @@
         </div>
 
         <div class="mt-8 flex flex-wrap gap-3">
-          <RouterLink
-            v-for="action in homeContent.hero.actions"
-            :key="action.label"
-            :to="'to' in action ? action.to : '/'"
-            v-if="'to' in action"
-            class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold shadow-soft transition hover:-translate-y-0.5"
-            :class="action.variant === 'primary' ? 'bg-emerald-500 text-white hover:bg-emerald-400' : 'border border-slate-200 bg-white text-slate-700 hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200'"
-          >
-            {{ action.label }}
-          </RouterLink>
-          <a
-            v-for="action in homeContent.hero.actions"
-            v-else
-            :key="action.label"
-            :href="action.href"
-            target="_blank"
-            rel="noreferrer"
-            class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-soft transition hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
-          >
-            {{ action.label }}
-          </a>
+          <template v-for="action in homeContent.hero.actions" :key="action.label">
+            <RouterLink
+              v-if="isInternalAction(action)"
+              :to="action.to"
+              class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition"
+              :class="action.variant === 'primary' ? 'bg-emerald-600 text-white hover:bg-emerald-500' : 'border border-slate-300 bg-white text-slate-700 hover:border-emerald-500 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200'"
+            >
+              {{ action.label }}
+            </RouterLink>
+            <a
+              v-else
+              :href="action.href"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-emerald-500 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            >
+              {{ action.label }}
+            </a>
+          </template>
         </div>
       </div>
 
       <div class="order-1 lg:order-2">
-        <div class="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/70 p-5 shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70 sm:p-8">
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.16),transparent_45%)]"></div>
-          <div class="relative flex items-center justify-center rounded-[1.75rem] border border-slate-200/70 bg-white/90 p-8 dark:border-slate-800 dark:bg-slate-900/80">
+        <div class="overflow-hidden rounded-md border border-slate-300 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+          <div class="flex items-center justify-center border border-slate-200 bg-white p-8 dark:border-slate-700 dark:bg-slate-900">
             <img :src="homeContent.hero.image" :alt="homeContent.hero.eyebrow + ' logo'" class="h-[14rem] w-auto sm:h-[18rem]" />
           </div>
         </div>
@@ -58,7 +55,7 @@
       <article
         v-for="item in homeContent.spotlights"
         :key="item.title"
-        class="overflow-hidden rounded-[2rem] border border-white/60 bg-white/75 shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70"
+        class="overflow-hidden rounded-md border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900"
       >
         <img :src="item.image" :alt="item.title" class="h-64 w-full object-cover" />
         <div class="p-7 sm:p-8">
@@ -78,9 +75,9 @@
         <div
           v-for="feature in homeContent.features"
           :key="feature.title"
-          class="rounded-3xl border border-white/60 bg-white/75 p-6 shadow-soft backdrop-blur-xl transition hover:-translate-y-1 hover:border-emerald-200 dark:border-slate-800 dark:bg-slate-950/70 dark:hover:border-emerald-700"
+          class="rounded-md border border-slate-300 bg-white p-6 dark:border-slate-700 dark:bg-slate-900"
         >
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-lg font-bold text-emerald-600 dark:text-emerald-400">✦</div>
+          <div class="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-emerald-300 bg-emerald-50 text-base font-bold text-emerald-700 dark:border-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300">✦</div>
           <h3 class="mt-5 text-lg font-semibold">{{ feature.title }}</h3>
           <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ feature.description }}</p>
         </div>
@@ -98,9 +95,9 @@
         <article
           v-for="member in homeContent.team"
           :key="member.name"
-          class="rounded-[2rem] border border-white/60 bg-white/75 p-8 text-center shadow-soft backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70"
+          class="rounded-md border border-slate-300 bg-white p-8 text-center dark:border-slate-700 dark:bg-slate-900"
         >
-          <img :src="member.avatar" :alt="member.name" class="mx-auto h-24 w-24 rounded-full border border-slate-200 object-cover shadow-md dark:border-slate-700" />
+          <img :src="member.avatar" :alt="member.name" class="mx-auto h-24 w-24 rounded-full border border-slate-200 object-cover dark:border-slate-700" />
           <h3 class="mt-5 text-xl font-semibold">{{ member.name }}</h3>
           <p class="mt-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">{{ member.role }}</p>
           <p v-for="line in member.bio" :key="line" class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -127,6 +124,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { homeContent } from '@/content/siteContent'
+
+const isInternalAction = (
+  action: (typeof homeContent.hero.actions)[number],
+): action is Extract<(typeof homeContent.hero.actions)[number], { to: string }> => 'to' in action
 
 const online = ref(false)
 const playersOnline = ref<number | null>(null)
