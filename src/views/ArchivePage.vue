@@ -19,9 +19,10 @@
             :href="archive.downloadUrl"
             target="_blank"
             rel="noreferrer"
-            class="mt-6 inline-flex w-fit items-center justify-center rounded-md bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+            class="mt-6 inline-flex w-fit items-center justify-center gap-1.5 rounded-md border border-emerald-600 bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
           >
             立即下载
+            <Icon icon="ri:external-link-line" class="h-4 w-4 opacity-90" />
           </a>
         </div>
       </article>
@@ -30,5 +31,6 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { archiveContent } from '@/content/siteContent'
 </script>

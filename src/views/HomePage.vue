@@ -19,8 +19,8 @@
             <RouterLink
               v-if="isInternalAction(action)"
               :to="action.to"
-              class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition"
-              :class="action.variant === 'primary' ? 'bg-emerald-600 text-white hover:bg-emerald-500' : 'text-slate-700 hover:text-emerald-700 dark:text-slate-200 dark:hover:text-emerald-400'"
+              class="inline-flex items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold transition"
+              :class="action.variant === 'primary' ? 'border-emerald-600 bg-emerald-600 text-white hover:bg-emerald-500' : 'border-slate-300 text-slate-700 hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400'"
             >
               {{ action.label }}
             </RouterLink>
@@ -29,9 +29,10 @@
               :href="action.href"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:text-slate-200 dark:hover:text-emerald-400"
+              class="inline-flex items-center justify-center gap-1.5 rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400"
             >
               {{ action.label }}
+              <Icon icon="ri:external-link-line" class="h-4 w-4 opacity-80" />
             </a>
           </template>
         </div>
@@ -94,6 +95,7 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { computed, onMounted, ref } from 'vue'
 import { homeContent } from '@/content/siteContent'
 import { fetchServerStatus } from '@/utils/serverStatus'

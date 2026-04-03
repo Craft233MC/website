@@ -6,7 +6,7 @@
       <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">哎呀，我这是在哪儿？页面不见了。我得找到回去的路。</p>
       <RouterLink
         to="/"
-        class="mt-8 inline-flex items-center justify-center rounded-md bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+        class="mt-8 inline-flex items-center justify-center rounded-md border border-emerald-600 bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
       >
         回到首页
       </RouterLink>

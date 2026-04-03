@@ -31,9 +31,10 @@
               :href="item.href"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:text-slate-200"
+              class="inline-flex items-center justify-center gap-1.5 rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200"
             >
               {{ item.button }}
+              <Icon icon="ri:external-link-line" class="h-4 w-4 opacity-80" />
             </a>
           </div>
         </article>
@@ -43,5 +44,6 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { contributeContent } from '@/content/siteContent'
 </script>
