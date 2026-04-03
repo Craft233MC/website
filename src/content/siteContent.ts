@@ -203,7 +203,6 @@ export const archiveContent = [
     image: 'https://www.craft233.top/assets/img/week1/2023-08-31_00.03.12.png',
     dateRange: '2023.7.10 — 2024.2.24',
     downloadInfos: [
-      { title: '自托管', url: 'https://pan.neokoni.ink' },
       { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-eJGmd' },
     ],
   },
