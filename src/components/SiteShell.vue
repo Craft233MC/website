@@ -71,7 +71,8 @@
 
     <Transition name="fade">
       <div v-if="menuOpen" class="fixed inset-0 z-[60] bg-slate-950/40 backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
-        <div class="ml-auto flex h-full w-[min(88vw,22rem)] flex-col border-l border-slate-200 bg-white/95 p-5 dark:border-slate-800 dark:bg-slate-900/90">
+        <Transition name="mobile-menu" appear>
+          <div class="mx-auto mt-3 w-[min(94vw,42rem)] rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/95">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <div class="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Craft233</div>
@@ -109,7 +110,8 @@
               </a>
             </template>
           </nav>
-        </div>
+          </div>
+        </Transition>
       </div>
     </Transition>
 
@@ -227,6 +229,17 @@ watch(
 
 .fade-enter-from,
 .fade-leave-to {
+  opacity: 0;
+}
+
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: transform 0.24s ease, opacity 0.24s ease;
+}
+
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  transform: translateY(-14px);
   opacity: 0;
 }
 
