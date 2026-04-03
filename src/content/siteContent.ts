@@ -309,7 +309,7 @@ export const aboutContent = {
     {
       date: '2021.06.12',
       title: '项目起步',
-      description: '在我的世界中国版以租赁服形式启动，当时定位为轻生存服务器。',
+      description: '在我的世界中国版以租赁服形式启动，当时命名为轻生存服务器。',
     },
     {
       date: '2023.08.04',

@@ -11,7 +11,7 @@
       <div class="rounded-xl border border-slate-200/80 px-6 py-5 dark:border-slate-800/80">
         <p class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-slate-400">赞助概览</p>
         <p class="mt-4 text-xl font-semibold text-slate-900 dark:text-slate-100">共 {{ sponsorsContent.length }} 位赞助者</p>
-        <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">每一份支持都用于维持服务器与站点运行，感谢长期信任与陪伴。</p>
+        <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">每一份支持都用于维持服务器与站点运行，感谢长期信任与陪伴，所有使用详情均在群文件公开。</p>
       </div>
     </div>
 
