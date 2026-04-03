@@ -107,8 +107,8 @@ export const legalNotice = [
 export const homeContent = {
   hero: {
     eyebrow: 'Craft233',
-    title: '全新出发，让简化带来原生态的生存体验。',
-    subtitle: '在尝试中找到尽可能优的生存体验。与玩家一起，携手出发。',
+    title: '轻量增强，不改原味的生存体验。',
+    subtitle: '从基础生存出发，保留原版乐趣，和玩家一起慢慢建设。',
     actions: [
       { label: '加入服务器', to: '/join', variant: 'primary' },
       { label: '查看规则', to: '/rules', variant: 'ghost' },
