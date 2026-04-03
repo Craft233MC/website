@@ -155,13 +155,13 @@
           <p>© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
           <div class="flex flex-wrap items-center gap-4">
             <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              <Icon icon="ri:shield-check-line" class="h-4 w-4" />萌ICP备20232336号
+              萌ICP备20232336号
             </a>
             <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              <Icon icon="ri:file-list-3-line" class="h-4 w-4" />蜀ICP备2024074700号-1
+              蜀ICP备2024074700号-1
             </a>
             <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              <Icon icon="ri:government-line" class="h-4 w-4" />川公网安备51130402000151号
+              川公网安备51130402000151号
             </a>
           </div>
           <div class="flex items-center gap-4 text-slate-600 dark:text-slate-300">
