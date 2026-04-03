@@ -32,11 +32,7 @@ export const pages = {
 export const navigation = [
   { label: '首页', to: '/' },
   { label: '加入', to: '/join' },
-  { label: '存档', to: '/archive' },
-  { label: '贡献', to: '/contribute' },
   { label: '规则', to: '/rules' },
-  { label: '赞助者们', to: '/sponsors' },
-  { label: '友情链接', to: '/friendlinks' },
 ] as const
 
 export const footerGroups = [
@@ -72,6 +68,15 @@ export const footerGroups = [
     links: [
       { label: '外部监测站', icon: 'ri:pulse-line', href: 'https://status.craft233.top' },
       { label: '爱发电', icon: 'ri:hand-heart-line', href: 'https://afdian.com/a/neokoni/' },
+    ],
+  },
+  {
+    title: '其他',
+    links: [
+      { label: '存档', icon: 'ri:archive-line', to: '/archive' },
+      { label: '贡献', icon: 'ri:gift-line', to: '/contribute' },
+      { label: '赞助者们', icon: 'ri:heart-3-line', to: '/sponsors' },
+      { label: '友情链接', icon: 'ri:links-line', to: '/friendlinks' },
     ],
   },
 ] as const
@@ -197,21 +202,28 @@ export const archiveContent = [
       'Craft233 最原始的一个周目，此时我们正在用不知名的配置开服，一切都是未知的，每一次修改都是对开服的学习。',
     image: 'https://www.craft233.top/assets/img/week1/2023-08-31_00.03.12.png',
     dateRange: '2023.7.10 — 2024.2.24',
-    downloadUrl: 'https://www.123912.com/s/81d8Vv-eJGmd',
+    downloadInfos: [
+      { title: '自托管', url: 'https://pan.neokoni.ink' },
+      { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-eJGmd' },
+    ],
   },
   {
     title: '第二周目：Cube',
     description: '第二周目的生电服存档，因无人感兴趣加入与管理维护降低，在很长一段时间之前就已是空服。第二周目并未结束，仅 Cube。',
     image: 'https://www.craft233.top/assets/img/week2/cube/cube-screenshot-from-bili.png',
     dateRange: '2024.3.10 — 2024.8.3',
-    downloadUrl: 'https://www.123912.com/s/81d8Vv-tJGmd',
+    downloadInfos: [
+      { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-tJGmd' },
+    ],
   },
   {
     title: '第二周目',
     description: '第二周目的非生电服存档。',
     image: 'https://www.craft233.top/assets/img/week2/town.png',
     dateRange: '2024.3.10 — 2025.4.2',
-    downloadUrl: 'https://www.123684.com/s/81d8Vv-iJGmd',
+    downloadInfos: [
+      { title: '123云盘', url: 'https://www.123684.com/s/81d8Vv-iJGmd' },
+    ],
   },
 ] as const
 

@@ -27,8 +27,8 @@
     </div>
 
     <Transition name="fade">
-      <div v-if="downloadDialogOpen" class="fixed inset-0 z-[70] bg-slate-950/45 backdrop-blur-sm" @click.self="closeDownloadDialog">
-        <div class="mx-auto mt-20 w-[min(92vw,30rem)] rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+      <div v-if="downloadDialogOpen" class="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/45 backdrop-blur-sm p-4" @click.self="closeDownloadDialog">
+        <div class="w-[min(88vw,22rem)] rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
           <div class="flex items-center justify-between gap-4">
             <div>
               <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">选择下载线路</p>
@@ -44,18 +44,17 @@
             </button>
           </div>
 
-          <div class="mt-5 space-y-3">
+          <div class="mt-5 flex flex-col items-center gap-2.5">
             <a
               v-for="option in downloadDialogOptions"
               :key="option.label"
               :href="option.url"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex w-full items-center justify-between rounded-md border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400"
+              class="inline-flex min-w-[8.5rem] items-center justify-center rounded-md border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400"
               @click="closeDownloadDialog"
             >
               {{ option.label }}
-              <span class="text-xs text-slate-500 dark:text-slate-400">打开</span>
             </a>
           </div>
         </div>
@@ -80,16 +79,10 @@ const selectedArchiveTitle = ref('')
 const downloadDialogOptions = ref<DownloadOption[]>([])
 
 const normalizedDownloadOptions = (archive: ArchiveItem): DownloadOption[] => {
-  if ('downloads' in archive && Array.isArray(archive.downloads) && archive.downloads.length > 0) {
-    return archive.downloads as DownloadOption[]
-  }
-
-  return [
-    {
-      label: '默认线路',
-      url: archive.downloadUrl,
-    },
-  ]
+  return archive.downloadInfos.map((item) => ({
+    label: item.title,
+    url: item.url,
+  }))
 }
 
 const closeDownloadDialog = () => {
