@@ -16,9 +16,9 @@ Craft233 Server Official website
 Most user-editable content is stored outside of components:
 
 - [src/content/siteContent.ts](src/content/siteContent.ts) — site copy, navigation, footer links, page content, and SEO content sources
-- [src/config/site.config.json](src/config/site.config.json) — site base path, favicon source, and theme color
+- [src/config/site.config.json](src/config/site.config.json) — site base path, favicon source, theme color, and Minecraft status API settings
 - [src/config/theme.ts](src/config/theme.ts) — accent palette values used by the site theme
-- [src/config/server.ts](src/config/server.ts) — Minecraft server address used by the status display
+- [src/config/server.ts](src/config/server.ts) — Minecraft status API runtime config (reuses server address from `joinContent`)
 - [src/utils/seo.ts](src/utils/seo.ts) — runtime SEO metadata mapping
 
 The favicon is downloaded during the prebuild step from the configured remote URL when available. If the download fails, the build continues and the existing favicon is left unchanged.
@@ -44,6 +44,43 @@ npm run build
 npm run preview
 ```
 
+## Minecraft Status API Configuration
+
+The status widget now uses an external HTTP API only.
+
+Edit [src/config/site.config.json](src/config/site.config.json):
+
+```json
+{
+	"minecraftStatusApi": {
+		"url": "https://motd.minebbs.com/api/status",
+		"params": {
+			"ip": "$serverAddress",
+			"stype": "je",
+			"srv": "true"
+		},
+		"responsePaths": {
+			"online": "status",
+			"playersOnline": "players.online",
+			"playersMax": "players.max"
+		},
+		"onlineStringValue": "online"
+	}
+}
+```
+
+- `url`: external API endpoint.
+- `params`: query parameter map. `ip` can use string reference `"$serverAddress"` (`serverAddress` comes from [src/config/server.ts](src/config/server.ts), which reuses `joinContent.servers[0].address` from [src/content/siteContent.ts](src/content/siteContent.ts)).
+- API config is read only from [src/config/site.config.json](src/config/site.config.json): no environment variable override, and no fallback defaults are injected in `server.ts`.
+- `responsePaths`: dot-path mapping for key fields (`online`, `playersOnline`, `playersMax`).
+- `onlineStringValue`: when `online` path resolves to a string, it is compared with this value (case-insensitive).
+
+Online value parsing behavior:
+
+- Boolean: use directly (`true` / `false`).
+- Number: `> 1` => online, `< 1` => offline, `= 1` => online.
+- String: first try `"true"` / `"false"`, otherwise compare with `onlineStringValue`.
+
 ## AI Development Guide
 
 If you are an AI coding assistant working on this project:
@@ -58,4 +95,4 @@ If you are an AI coding assistant working on this project:
 
 - The application updates document metadata at runtime.
 - `index.html` only keeps minimal fallback markup.
-- The server status endpoint is implemented locally and does not rely on an external status API.
+- The server status widget is powered by a configurable external status API.

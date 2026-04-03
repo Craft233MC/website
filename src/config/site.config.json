@@ -1,5 +1,19 @@
 {
   "basePath": "/",
   "faviconSource": "https://res.neokoni.ink/craft233/img/craft233_logo_64.png",
-  "themeColor": "#10b981"
+  "themeColor": "#10b981",
+  "minecraftStatusApi": {
+    "url": "https://motd.minebbs.com/api/status",
+    "params": {
+      "ip": "$serverAddress",
+      "stype": "je",
+      "srv": "true"
+    },
+    "responsePaths": {
+      "online": "status",
+      "playersOnline": "players.online",
+      "playersMax": "players.max"
+    },
+    "onlineStringValue": "online"
+  }
 }
