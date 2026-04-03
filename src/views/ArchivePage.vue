@@ -44,7 +44,7 @@
             </button>
           </div>
 
-          <div class="mt-5 flex flex-col items-center gap-2.5">
+          <div class="mt-5 grid w-full place-items-center gap-2.5">
             <a
               v-for="option in downloadDialogOptions"
               :key="option.label"
