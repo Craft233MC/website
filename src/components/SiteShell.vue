@@ -77,7 +77,7 @@
           <div class="w-full max-w-xl rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/95">
           <div class="mb-6 flex items-center justify-between">
             <div>
-              <div class="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Craft233</div>
+              <div class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Craft233</div>
               <div class="text-xs text-slate-500 dark:text-slate-400">站点导航</div>
             </div>
             <button
