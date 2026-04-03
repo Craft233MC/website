@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: build website file
-        run: npm run generate
+        run: npm run build
 
       - name: SSH Server Deploy
         uses: appleboy/scp-action@v0.1.7
