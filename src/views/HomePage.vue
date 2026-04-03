@@ -63,28 +63,29 @@
     </div>
 
     <section class="mt-20 lg:mt-28">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ homeContent.teamTitle }}</h2>
-      <p class="mt-4 text-slate-600 dark:text-slate-300">{{ homeContent.teamDescription }}</p>
+      <h2 class="text-center md:text-left text-3xl font-bold tracking-tight sm:text-4xl">{{ homeContent.teamTitle }}</h2>
+      <p class="text-center md:text-left mt-4 text-slate-600 dark:text-slate-300">{{ homeContent.teamDescription }}</p>
 
-      <div class="mt-10 grid gap-8 border-t border-slate-200 pt-8 dark:border-slate-800 md:grid-cols-2 lg:grid-cols-3">
-        <article v-for="member in homeContent.team" :key="member.name" class="grid gap-6 md:grid-cols-[112px_1fr] md:items-start">
-          <img :src="member.avatar" :alt="member.name" class="h-24 w-24 rounded-full object-cover md:justify-self-start" />
-          <div>
+      <div class="mt-10 grid gap-8 border-t border-slate-200 pt-8 dark:border-slate-800 justify-center md:justify-start md:grid-cols-2 lg:grid-cols-3">
+        <article v-for="member in homeContent.team" :key="member.name" class="flex flex-col items-center text-center md:grid md:gap-6 md:grid-cols-[112px_1fr] md:items-start md:text-left">
+          <img :src="member.avatar" :alt="member.name" class="h-24 w-24 rounded-full object-cover md:self-start" />
+          <div class="w-full">
             <h3 class="text-xl font-semibold">{{ member.name }}</h3>
             <p class="mt-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">{{ member.role }}</p>
             <p v-for="line in member.bio" :key="line" class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
               {{ line }}
             </p>
-            <div v-if="member.links.length" class="mt-5 flex flex-wrap items-center gap-3">
+            <div v-if="member.links.length" class="mt-5 flex flex-wrap items-center justify-center md:justify-start gap-3">
               <a
                 v-for="link in member.links"
                 :key="link.label"
                 :href="link.href"
+                :title="link.label"
                 target="_blank"
                 rel="noreferrer"
-                class="text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
+                class="inline-flex items-center justify-center h-8 w-8 text-slate-600 transition hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400"
               >
-                {{ link.label }}
+                <Icon :icon="link.icon" class="h-5 w-5" />
               </a>
             </div>
           </div>

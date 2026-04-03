@@ -139,8 +139,8 @@ export const homeContent = {
       avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3335792980&s=640',
       bio: ['每天都在摸鱼的鸽子。'],
       links: [
-        { label: 'GitHub', href: 'https://github.com/neokoni' },
-        { label: '邮箱', href: 'mailto:me@neokoni.ink' },
+        { label: 'GitHub', href: 'https://github.com/neokoni', icon: 'ri:github-line' },
+        { label: '邮箱', href: 'mailto:me@neokoni.ink', icon: 'ri:mail-line' },
       ],
     },
     {

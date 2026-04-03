@@ -83,12 +83,23 @@ let mediaQuery: MediaQueryList | null = null
 let copyLabelTimer: number | null = null
 
 const copyServerAddress = async () => {
+  let success = false
   try {
-    await navigator.clipboard.writeText(serverAddress)
-    copyLabel.value = '已复制'
+    // 使用传统方法确保兼容性
+    const textarea = document.createElement('textarea')
+    textarea.value = serverAddress
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
+    textarea.style.pointerEvents = 'none'
+    document.body.appendChild(textarea)
+    textarea.select()
+    success = document.execCommand('copy')
+    document.body.removeChild(textarea)
   } catch {
-    copyLabel.value = '复制失败'
+    success = false
   }
+
+  copyLabel.value = success ? '已复制' : '复制失败'
 
   if (copyLabelTimer !== null) {
     window.clearTimeout(copyLabelTimer)
