@@ -7,7 +7,7 @@
       跳到内容
     </a>
 
-    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl dark:bg-slate-950/85">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/45 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/45">
       <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <RouterLink to="/" class="flex items-center gap-3">
           <img :src="siteBrand.logo" :alt="siteBrand.name + ' logo'" class="h-8 w-auto" />
@@ -25,7 +25,7 @@
               class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
               active-class="nav-link-active"
             >
-              {{ item.label }}
+              <span class="nav-link-text">{{ item.label }}</span>
             </RouterLink>
             <a
               v-else
@@ -34,7 +34,7 @@
               rel="noreferrer"
               class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
             >
-              {{ item.label }}
+              <span class="nav-link-text">{{ item.label }}</span>
             </a>
           </template>
         </nav>
@@ -42,7 +42,7 @@
         <div class="flex items-center gap-2">
           <button
             type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-transparent text-slate-700 transition hover:text-emerald-600 dark:border-slate-800 dark:text-slate-200 dark:hover:text-emerald-300"
             :aria-label="theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'"
             @click="toggleTheme"
           >
@@ -57,7 +57,7 @@
 
           <button
             type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/80 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-emerald-700 dark:hover:text-emerald-300 lg:hidden"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-transparent text-slate-700 transition hover:text-emerald-600 dark:border-slate-800 dark:text-slate-200 dark:hover:text-emerald-300 lg:hidden"
             aria-label="打开菜单"
             @click="menuOpen = true"
           >
@@ -70,8 +70,8 @@
     </header>
 
     <Transition name="fade">
-      <div v-if="menuOpen" class="fixed inset-0 z-[60] bg-slate-950/40 backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
-        <div class="ml-auto flex h-full w-[min(88vw,22rem)] flex-col border-l border-white/20 bg-white p-5 shadow-2xl dark:border-slate-800 dark:bg-slate-950">
+      <div v-if="menuOpen" class="fixed inset-0 z-[60] bg-slate-900/20 backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
+        <div class="ml-auto flex h-full w-[min(88vw,22rem)] flex-col border-l border-slate-200 bg-white/95 p-5 dark:border-slate-800 dark:bg-slate-900/35">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <div class="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Craft233</div>
@@ -92,18 +92,18 @@
               <RouterLink
                 v-if="'to' in item"
                 :to="item.to"
-                class="rounded-2xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 dark:border-slate-800 dark:text-slate-200 dark:hover:border-emerald-700 dark:hover:bg-emerald-500/10"
-                active-class="border-emerald-500 bg-emerald-500 text-white dark:border-emerald-500 dark:bg-emerald-500 dark:text-white"
+                class="rounded-md px-4 py-3 text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
+                active-class="text-emerald-600 dark:text-emerald-400"
                 @click="menuOpen = false"
               >
-                {{ item.label }}
+                  {{ item.label }}
               </RouterLink>
               <a
                 v-else
                 :href="item.href"
                 target="_blank"
                 rel="noreferrer"
-                class="rounded-2xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 dark:border-slate-800 dark:text-slate-200 dark:hover:border-emerald-700 dark:hover:bg-emerald-500/10"
+                class="rounded-md px-4 py-3 text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
               >
                 {{ item.label }}
               </a>
@@ -117,7 +117,7 @@
       <slot />
     </main>
 
-    <footer class="mt-24 bg-white/65 backdrop-blur-xl dark:bg-slate-950/65">
+    <footer class="mt-24 bg-white/50 backdrop-blur-xl dark:bg-slate-900/30">
       <div class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1fr]">
           <div>
@@ -168,7 +168,7 @@
               :aria-label="social.label"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-100 transition hover:text-emerald-600 dark:bg-slate-800 dark:hover:text-emerald-400"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md transition hover:text-emerald-600 dark:hover:text-emerald-400"
             >
               <Icon :icon="social.icon" class="h-5 w-5" />
             </a>
@@ -237,28 +237,34 @@ watch(
   justify-content: center;
 }
 
-.nav-link::after {
+.nav-link-text {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-text::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
+  bottom: -4px;
+  width: 66%;
+  height: 2.5px;
   background-color: rgb(5 150 105);
+  border-radius: 9999px;
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.28s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover .nav-link-text::after {
   transform: scaleX(1);
 }
 
-.nav-link:active::after {
+.nav-link:active .nav-link-text::after {
   animation: nav-line-bounce 0.34s ease;
 }
 
-.nav-link-active::after {
+.nav-link-active .nav-link-text::after {
   transform: scaleX(1);
 }
 
@@ -272,10 +278,10 @@ watch(
 
 @keyframes nav-line-bounce {
   0% {
-    transform: scaleX(0);
+    transform: scaleX(1);
   }
   55% {
-    transform: scaleX(1.14);
+    transform: scaleX(1.1);
   }
   100% {
     transform: scaleX(1);

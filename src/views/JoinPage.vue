@@ -8,14 +8,14 @@
         <div
           v-for="server in joinContent.servers"
           :key="server.name"
-          class="bg-slate-100 p-5 dark:bg-slate-900/60"
+          class="p-5"
         >
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p class="text-sm text-slate-500 dark:text-slate-400">服务器地址</p>
               <p class="mt-1 text-xl font-semibold">{{ server.name }}</p>
             </div>
-            <span class="rounded-md bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">{{ statusText }}</span>
+            <span class="rounded-md px-3 py-1 text-sm font-medium text-emerald-700 dark:text-emerald-300">{{ statusText }}</span>
           </div>
 
           <div class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">

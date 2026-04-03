@@ -18,7 +18,7 @@
             :href="item.href"
             target="_blank"
             rel="noreferrer"
-            class="mt-5 inline-flex items-center justify-center rounded-md bg-slate-100 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:bg-slate-800/70 dark:text-slate-200"
+            class="mt-5 inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:text-slate-200"
           >
             {{ item.button }}
           </a>

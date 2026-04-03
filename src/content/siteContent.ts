@@ -122,44 +122,6 @@ export const homeContent = {
       image: 'https://www.craft233.top/assets/img/index/oneblock.png',
     },
   ],
-  features: [
-    {
-      title: '基岩版头颅显示',
-      description: '对基岩版物品栏内完整的插件头颅物品显示，背包不再算是 Steve 头颅。',
-    },
-    {
-      title: '版本兼容',
-      description: '支持 Java 版 1.20 及之后的版本以及基岩版的最新正式版。',
-    },
-    {
-      title: '删繁就简',
-      description: '相比于二周目，第三周目删去了臃肿感知不大的插件，返璞归真。',
-    },
-    {
-      title: '滚动更新',
-      description: '当插件或模组支持时，我们会追随最新的 Minecraft 版本。',
-    },
-    {
-      title: '线程优化',
-      description: '主生存服借助 Folia 提升资源利用率，减少卡顿。',
-    },
-    {
-      title: '原生运行',
-      description: '手动修改源码将粘液科技带回 Folia 平台，不依靠修改 Scheduler 服务端，提升稳定性。',
-    },
-    {
-      title: '数据安全',
-      description: '每日凌晨自动备份数据，保证数据安全。',
-    },
-    {
-      title: '去密码化',
-      description: '使用主流账号 / 外置登陆验证，不再依靠皮肤恢复和进服密码。',
-    },
-    {
-      title: '开源',
-      description: '所有经过修改的插件均开源在 GitHub 平台。',
-    },
-  ],
   teamTitle: '我们的团队',
   teamDescription: '认识一下我们的管理人员。',
   team: [
@@ -299,7 +261,7 @@ export const friendLinksContent = [
   },
   {
     name: 'FurCraft',
-    avatar: 'https://www.furcraft.top/icon.png',
+    avatar: 'https://www.furcraft.top/logo.png',
     href: 'https://www.furcraft.top',
     intro: ['在方块世界中，与毛毛共绘未来'],
   },

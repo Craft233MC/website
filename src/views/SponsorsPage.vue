@@ -5,10 +5,10 @@
       <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">在此查看已捐赠人员列表及留言。名单按首次捐赠时间排序。</p>
     </div>
 
-    <div class="mt-12 overflow-hidden bg-white dark:bg-slate-900">
+    <div class="mt-12 overflow-hidden">
       <div class="overflow-x-auto">
         <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
-          <thead class="bg-slate-50/80 dark:bg-slate-900/70">
+          <thead>
             <tr>
               <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600 dark:text-slate-300">捐赠者</th>
               <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600 dark:text-slate-300">留言</th>
@@ -16,7 +16,7 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-            <tr v-for="item in sponsorsContent" :key="item.name" class="hover:bg-slate-50/80 dark:hover:bg-slate-900/40">
+            <tr v-for="item in sponsorsContent" :key="item.name" class="hover:bg-slate-50/80 dark:hover:bg-slate-800/20">
               <td class="px-6 py-4">
                 <div class="flex items-center gap-3">
                   <img :src="avatarUrl(item.qq)" :alt="item.name" class="h-10 w-10 rounded-full border border-slate-200 object-cover dark:border-slate-700" />
