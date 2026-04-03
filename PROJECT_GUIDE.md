@@ -46,4 +46,18 @@
 - 当前实现是一个标准的 Vue SPA，便于后续继续拆分组件或接入更多页面。
 
 ## 开发规范
-- commit log 使用声明式写法，并保持语义清晰（推荐 Conventional Commits 形式，如 `feat: ...`、`fix: ...`、`chore: ...`）。
+
+### 提交信息格式
+- 遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范。
+- **默认使用英语**作为 commit 信息语言（除非特殊情况另有说明）。
+- 格式形式：`<type>(<scope>): <subject>`
+  - `type` 可选值：`feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`, `build`
+  - `scope` 可选，表示影响范围，如 `(HomePage)`, `(JoinPage)`
+  - `subject` 简洁描述变更内容，不以句点结尾
+
+### 提交示例
+- `feat(HomePage): add team member information`
+- `fix(JoinPage): resolve copy function on mobile browsers`
+- `docs: update development guide`
+- `refactor(SiteShell): optimize navigation menu structure`
+- `chore: update dependencies`
