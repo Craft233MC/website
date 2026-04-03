@@ -304,7 +304,7 @@ watch(
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 66%;
+  width: 72%;
   height: 2.5px;
   background-color: var(--accent-600);
   border-radius: 9999px;
@@ -318,7 +318,7 @@ watch(
 }
 
 .nav-link:active .nav-link-text::after {
-  animation: nav-line-bounce 0.34s ease;
+  transform: scaleX(1.16);
 }
 
 .nav-link-active .nav-link-text::after {
@@ -331,17 +331,5 @@ watch(
 
 .dark .nav-link-active {
   color: var(--accent-400);
-}
-
-@keyframes nav-line-bounce {
-  0% {
-    transform: scaleX(1);
-  }
-  55% {
-    transform: scaleX(1.1);
-  }
-  100% {
-    transform: scaleX(1);
-  }
 }
 </style>
