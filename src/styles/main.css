@@ -13,6 +13,11 @@
 :root {
   color-scheme: light;
   --page-bg: #f8fafc;
+  --accent-300: #6ee7b7;
+  --accent-400: #34d399;
+  --accent-500: #10b981;
+  --accent-600: #059669;
+  --accent-700: #047857;
 }
 
 .dark {
@@ -57,4 +62,56 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+.text-emerald-300 {
+  color: var(--accent-300) !important;
+}
+
+.text-emerald-400 {
+  color: var(--accent-400) !important;
+}
+
+.text-emerald-600 {
+  color: var(--accent-600) !important;
+}
+
+.text-emerald-700 {
+  color: var(--accent-700) !important;
+}
+
+.bg-emerald-600 {
+  background-color: var(--accent-600) !important;
+}
+
+.border-emerald-600 {
+  border-color: var(--accent-600) !important;
+}
+
+.hover\:bg-emerald-500:hover {
+  background-color: var(--accent-500) !important;
+}
+
+.hover\:text-emerald-600:hover {
+  color: var(--accent-600) !important;
+}
+
+.hover\:text-emerald-700:hover {
+  color: var(--accent-700) !important;
+}
+
+.dark .dark\:text-emerald-300 {
+  color: var(--accent-300) !important;
+}
+
+.dark .dark\:text-emerald-400 {
+  color: var(--accent-400) !important;
+}
+
+.dark .dark\:hover\:text-emerald-300:hover {
+  color: var(--accent-300) !important;
+}
+
+.dark .dark\:hover\:text-emerald-400:hover {
+  color: var(--accent-400) !important;
 }

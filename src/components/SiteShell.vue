@@ -306,7 +306,7 @@ watch(
   bottom: -4px;
   width: 66%;
   height: 2.5px;
-  background-color: rgb(5 150 105);
+  background-color: var(--accent-600);
   border-radius: 9999px;
   transform-origin: left;
   transform: scaleX(0);
@@ -326,11 +326,11 @@ watch(
 }
 
 .nav-link-active {
-  color: rgb(5 150 105);
+  color: var(--accent-600);
 }
 
 .dark .nav-link-active {
-  color: rgb(52 211 153);
+  color: var(--accent-400);
 }
 
 @keyframes nav-line-bounce {
