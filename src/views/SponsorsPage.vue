@@ -58,11 +58,12 @@
       </div>
     </div>
 
-    <p class="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">相关内容请查看 贡献 页。</p>
+    <p class="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">相关内容请查看 <RouterLink to="/contribute" class="underline hover:text-slate-700 dark:hover:text-slate-200 transition">贡献</RouterLink> 页。</p>
   </section>
 </template>
 
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import { sponsorsContent } from '@/content/siteContent'
 
 const avatarUrl = (qq: number | string) =>
