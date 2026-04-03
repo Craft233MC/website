@@ -10,8 +10,10 @@ import {
   siteBrand,
   sponsorsContent,
 } from '@/content/siteContent'
+import siteConfig from '@/config/site.config.json'
 
-export const siteOrigin = 'https://www.craft233.top'
+export const siteOrigin = window.location.origin
+export const siteBasePath = siteConfig.basePath === '/dev' ? '/dev' : ''
 export const siteFavicon = '/favicon.ico'
 
 export type SeoInfo = {
@@ -36,63 +38,63 @@ const seoMap: Record<RouteKey, SeoInfo> = {
     title: `Craft233 - ${pages.home.title}`,
     description: shortText(`${siteBrand.description}${homeContent.hero.subtitle}${homeContent.spotlights[0]?.description ?? ''}`, 160),
     overview: compact([...homeContent.spotlights.map((item) => item.title), homeContent.teamTitle]),
-    canonical: `${siteOrigin}/`,
+    canonical: `${siteOrigin}${siteBasePath}/`,
     image: homeContent.hero.image,
   },
   about: {
     title: `Craft233 - ${pages.about.title}`,
     description: shortText(`${aboutContent.subtitle}${aboutContent.paragraphs.join('')}`, 160),
     overview: compact(aboutContent.timeline.map((item) => item.title)),
-    canonical: `${siteOrigin}/about`,
+    canonical: `${siteOrigin}${siteBasePath}/about`,
     image: homeContent.hero.image,
   },
   join: {
     title: `Craft233 - ${pages.join.title}`,
     description: shortText(`${joinContent.summary}${joinContent.servers.map((s) => `${s.name} ${s.address}`).join('、')}${joinContent.steps.map((step) => step.title).join('、')}`, 160),
     overview: compact(joinContent.steps.map((step) => step.title)),
-    canonical: `${siteOrigin}/join`,
+    canonical: `${siteOrigin}${siteBasePath}/join`,
     image: joinContent.steps[0]?.image ?? homeContent.hero.image,
   },
   rules: {
     title: `Craft233 - ${pages.rules.title}`,
     description: shortText(rulesContent.slice(0, 3).join('；'), 160),
     overview: compact([rulesContent[0] ?? '', rulesContent[1] ?? '', rulesContent[2] ?? '']),
-    canonical: `${siteOrigin}/rules`,
+    canonical: `${siteOrigin}${siteBasePath}/rules`,
     image: homeContent.hero.image,
   },
   archive: {
     title: `Craft233 - ${pages.archive.title}`,
     description: shortText(archiveContent.map((item) => `${item.title}${item.dateRange}${item.description}`).join('；'), 160),
     overview: compact(archiveContent.map((item) => item.title)),
-    canonical: `${siteOrigin}/archive`,
+    canonical: `${siteOrigin}${siteBasePath}/archive`,
     image: archiveContent[0]?.image ?? homeContent.hero.image,
   },
   contribute: {
     title: `Craft233 - ${pages.contribute.title}`,
     description: shortText(contributeContent.map((item) => `${item.title}${item.description}`).join('；'), 160),
     overview: compact(contributeContent.map((item) => item.title)),
-    canonical: `${siteOrigin}/contribute`,
+    canonical: `${siteOrigin}${siteBasePath}/contribute`,
     image: homeContent.hero.image,
   },
   sponsors: {
     title: `Craft233 - ${pages.sponsors.title}`,
     description: shortText(`感谢各位对 Craft233 的信任。${sponsorsContent.map((item) => `${item.name}${item.message}`).join('；')}`, 160),
     overview: compact(sponsorsContent.map((item) => item.name)),
-    canonical: `${siteOrigin}/sponsors`,
+    canonical: `${siteOrigin}${siteBasePath}/sponsors`,
     image: homeContent.hero.image,
   },
   friendlinks: {
     title: `Craft233 - ${pages.friendlinks.title}`,
     description: shortText(`欢迎加入与我们互换友链。${friendLinksContent.map((item) => `${item.name}${item.intro.join('，')}`).join('；')}`, 160),
     overview: compact(friendLinksContent.map((item) => item.name)),
-    canonical: `${siteOrigin}/friendlinks`,
+    canonical: `${siteOrigin}${siteBasePath}/friendlinks`,
     image: homeContent.hero.image,
   },
   'not-found': {
     title: 'Craft233 - 页面不存在',
     description: '页面没有找到，请返回首页继续浏览 Craft233。',
     overview: '404 页面',
-    canonical: `${siteOrigin}/`,
+    canonical: `${siteOrigin}${siteBasePath}/`,
     image: homeContent.hero.image,
   },
 }
@@ -146,7 +148,7 @@ export const applySeo = (routeKey: RouteKey) => {
   ensureMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' })
   ensureMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: seo.title })
   ensureMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: seo.description })
-  ensureMeta('meta[name="theme-color"]', { name: 'theme-color', content: '#10b981' })
+  ensureMeta('meta[name="theme-color"]', { name: 'theme-color', content: siteConfig.themeColor ?? '#10b981' })
 
   updateLink('canonical', seo.canonical)
   updateLink('icon', siteFavicon, { type: 'image/x-icon' })
