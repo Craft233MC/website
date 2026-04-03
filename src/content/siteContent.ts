@@ -7,7 +7,7 @@ export const siteBrand = {
 
 export const pages = {
   home: {
-    title: 'V4 重制',
+    title: '四周目',
   },
   join: {
     title: '加入服务器',

@@ -70,8 +70,8 @@
     </header>
 
     <Transition name="fade">
-      <div v-if="menuOpen" class="fixed inset-0 z-[60] bg-slate-900/20 backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
-        <div class="ml-auto flex h-full w-[min(88vw,22rem)] flex-col border-l border-slate-200 bg-white/95 p-5 dark:border-slate-800 dark:bg-slate-900/35">
+      <div v-if="menuOpen" class="fixed inset-0 z-[60] bg-slate-950/40 backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
+        <div class="ml-auto flex h-full w-[min(88vw,22rem)] flex-col border-l border-slate-200 bg-white/95 p-5 dark:border-slate-800 dark:bg-slate-900/90">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <div class="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Craft233</div>
@@ -117,7 +117,7 @@
       <slot />
     </main>
 
-    <footer class="mt-24 bg-white/50 backdrop-blur-xl dark:bg-slate-900/30">
+    <footer class="mt-24 bg-white/65 backdrop-blur-xl dark:bg-slate-950/65">
       <div class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1fr]">
           <div>

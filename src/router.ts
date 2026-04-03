@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { pages } from '@/content/siteContent'
+import { applySeo } from '@/utils/seo'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -19,14 +20,8 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  const title = typeof to.meta.title === 'string' ? to.meta.title : ''
-  document.title = title ? `Craft233 - ${title}` : 'Craft233'
-
-  const description = 'Craft233，一个休闲养老摸鱼系的 Minecraft 小服务器，欢迎加入我们，同我们一起成长。'
-  const meta = document.querySelector('meta[name="description"]')
-  if (meta) {
-    meta.setAttribute('content', description)
-  }
+  const routeKey = typeof to.name === 'string' ? to.name : 'home'
+  applySeo(routeKey as Parameters<typeof applySeo>[0])
 })
 
 export default router
