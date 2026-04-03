@@ -15,22 +15,114 @@
           <h2 class="mt-2 text-3xl font-bold tracking-tight">{{ archive.title }}</h2>
           <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ archive.description }}</p>
           <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">{{ archive.dateRange }}</p>
-          <a
-            :href="archive.downloadUrl"
-            target="_blank"
-            rel="noreferrer"
-            class="mt-6 inline-flex w-fit items-center justify-center gap-1.5 rounded-md border border-emerald-600 bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+          <button
+            type="button"
+            class="mt-6 inline-flex w-fit items-center justify-center rounded-md border border-emerald-600 bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-500"
+            @click="handleDownload(archive)"
           >
             立即下载
-            <Icon icon="ri:external-link-line" class="h-4 w-4 opacity-90" />
-          </a>
+          </button>
         </div>
       </article>
     </div>
+
+    <Transition name="fade">
+      <div v-if="downloadDialogOpen" class="fixed inset-0 z-[70] bg-slate-950/45 backdrop-blur-sm" @click.self="closeDownloadDialog">
+        <div class="mx-auto mt-20 w-[min(92vw,30rem)] rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-slate-100">选择下载线路</p>
+              <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">{{ selectedArchiveTitle }}</p>
+            </div>
+            <button
+              type="button"
+              class="inline-flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-200"
+              aria-label="关闭线路选择"
+              @click="closeDownloadDialog"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="mt-5 space-y-3">
+            <a
+              v-for="option in downloadDialogOptions"
+              :key="option.label"
+              :href="option.url"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex w-full items-center justify-between rounded-md border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400"
+              @click="closeDownloadDialog"
+            >
+              {{ option.label }}
+              <span class="text-xs text-slate-500 dark:text-slate-400">打开</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </Transition>
   </section>
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
+import { computed, ref } from 'vue'
 import { archiveContent } from '@/content/siteContent'
+
+type ArchiveItem = (typeof archiveContent)[number]
+
+type DownloadOption = {
+  label: string
+  url: string
+}
+
+const downloadDialogOpen = ref(false)
+const selectedArchiveTitle = ref('')
+const downloadDialogOptions = ref<DownloadOption[]>([])
+
+const normalizedDownloadOptions = (archive: ArchiveItem): DownloadOption[] => {
+  if ('downloads' in archive && Array.isArray(archive.downloads) && archive.downloads.length > 0) {
+    return archive.downloads as DownloadOption[]
+  }
+
+  return [
+    {
+      label: '默认线路',
+      url: archive.downloadUrl,
+    },
+  ]
+}
+
+const closeDownloadDialog = () => {
+  downloadDialogOpen.value = false
+  selectedArchiveTitle.value = ''
+  downloadDialogOptions.value = []
+}
+
+const openExternal = (url: string) => {
+  window.open(url, '_blank', 'noopener,noreferrer')
+}
+
+const handleDownload = (archive: ArchiveItem) => {
+  const options = normalizedDownloadOptions(archive)
+  if (options.length <= 1) {
+    openExternal(options[0].url)
+    return
+  }
+
+  selectedArchiveTitle.value = archive.title
+  downloadDialogOptions.value = options
+  downloadDialogOpen.value = true
+}
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.18s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
