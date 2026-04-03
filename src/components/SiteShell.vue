@@ -135,34 +135,6 @@
             <ul class="mt-5 space-y-1 text-sm text-slate-500 dark:text-slate-400">
               <li v-for="item in legalNotice" :key="item">{{ item }}</li>
             </ul>
-
-            <div class="mt-6 flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400">
-              <p>© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
-              <div class="flex flex-wrap items-center gap-4">
-                <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
-                  萌ICP备20232336号
-                </a>
-                <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
-                  蜀ICP备2024074700号-1
-                </a>
-                <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
-                  川公网安备51130402000151号
-                </a>
-              </div>
-              <div class="flex items-center gap-4 text-slate-600 dark:text-slate-300">
-                <a
-                  v-for="social in footerSocialLinks"
-                  :key="social.label"
-                  :href="social.href"
-                  :aria-label="social.label"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="inline-flex h-9 w-9 items-center justify-center rounded-md transition hover:text-emerald-600 dark:hover:text-emerald-400"
-                >
-                  <Icon :icon="social.icon" class="h-5 w-5" />
-                </a>
-              </div>
-            </div>
           </div>
 
           <div>
@@ -194,6 +166,34 @@
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:flex-row lg:items-center lg:justify-between">
+          <p>© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
+          <div class="flex flex-wrap items-center gap-4 lg:justify-center">
+            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+              萌ICP备20232336号
+            </a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+              蜀ICP备2024074700号-1
+            </a>
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+              川公网安备51130402000151号
+            </a>
+          </div>
+          <div class="flex items-center gap-4 text-slate-600 dark:text-slate-300 lg:justify-end">
+            <a
+              v-for="social in footerSocialLinks"
+              :key="social.label"
+              :href="social.href"
+              :aria-label="social.label"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md transition hover:text-emerald-600 dark:hover:text-emerald-400"
+            >
+              <Icon :icon="social.icon" class="h-5 w-5" />
+            </a>
           </div>
         </div>
       </div>
