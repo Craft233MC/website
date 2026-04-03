@@ -14,7 +14,7 @@ import siteConfig from '@/config/site.config.json'
 
 export const siteOrigin = window.location.origin
 export const siteBasePath = siteConfig.basePath === '/dev' ? '/dev' : ''
-export const siteFavicon = '/favicon.ico'
+export const siteFavicon = '/favicon.png'
 
 export type SeoInfo = {
   title: string
@@ -151,6 +151,6 @@ export const applySeo = (routeKey: RouteKey) => {
   ensureMeta('meta[name="theme-color"]', { name: 'theme-color', content: siteConfig.themeColor ?? '#10b981' })
 
   updateLink('canonical', seo.canonical)
-  updateLink('icon', siteFavicon, { type: 'image/x-icon' })
-  updateLink('apple-touch-icon', siteFavicon, { type: 'image/x-icon' })
+  updateLink('icon', siteFavicon, { type: 'image/png' })
+  updateLink('apple-touch-icon', siteFavicon, { type: 'image/png' })
 }
