@@ -37,6 +37,14 @@ body {
   color: #e2e8f0;
 }
 
+:root.theme-switching *,
+:root.theme-switching *::before,
+:root.theme-switching *::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.28s;
+  transition-timing-function: ease;
+}
+
 * {
   box-sizing: border-box;
 }

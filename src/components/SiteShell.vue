@@ -46,13 +46,15 @@
             :aria-label="theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'"
             @click="toggleTheme"
           >
-            <svg v-if="theme === 'dark'" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2">
-              <path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-              <circle cx="12" cy="12" r="4" />
-            </svg>
-            <svg v-else viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2">
-              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" />
-            </svg>
+            <Transition name="theme-icon" mode="out-in">
+              <svg v-if="theme === 'dark'" key="sun" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2">
+                <path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                <circle cx="12" cy="12" r="4" />
+              </svg>
+              <svg v-else key="moon" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current stroke-2">
+                <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" />
+              </svg>
+            </Transition>
           </button>
 
           <button
@@ -191,6 +193,7 @@ const route = useRoute()
 const menuOpen = ref(false)
 const theme = ref<'light' | 'dark'>('light')
 const currentYear = computed(() => new Date().getFullYear())
+let themeAnimationTimer: number | null = null
 
 const applyTheme = () => {
   document.documentElement.classList.toggle('dark', theme.value === 'dark')
@@ -198,6 +201,14 @@ const applyTheme = () => {
 }
 
 const toggleTheme = () => {
+  document.documentElement.classList.add('theme-switching')
+  if (themeAnimationTimer !== null) {
+    window.clearTimeout(themeAnimationTimer)
+  }
+  themeAnimationTimer = window.setTimeout(() => {
+    document.documentElement.classList.remove('theme-switching')
+    themeAnimationTimer = null
+  }, 280)
   theme.value = theme.value === 'dark' ? 'light' : 'dark'
 }
 
@@ -241,6 +252,21 @@ watch(
 .mobile-menu-leave-to {
   transform: translateY(-14px);
   opacity: 0;
+}
+
+.theme-icon-enter-active,
+.theme-icon-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.theme-icon-enter-from {
+  opacity: 0;
+  transform: rotate(-16deg) scale(0.9);
+}
+
+.theme-icon-leave-to {
+  opacity: 0;
+  transform: rotate(16deg) scale(0.9);
 }
 
 .nav-link {
