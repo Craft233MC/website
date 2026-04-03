@@ -77,7 +77,6 @@ export const footerGroups = [
   {
     title: '其他',
     links: [
-      { label: '关于', icon: 'ri:information-line', to: '/about' },
       { label: '存档', icon: 'ri:archive-line', to: '/archive' },
       { label: '贡献', icon: 'ri:gift-line', to: '/contribute' },
       { label: '赞助者们', icon: 'ri:heart-3-line', to: '/sponsors' },
