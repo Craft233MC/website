@@ -146,9 +146,9 @@
                     <RouterLink
                       v-if="'to' in link"
                       :to="link.to"
-                      class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
+                      class="inline-flex items-center gap-2 text-sm leading-5 font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
                     >
-                      <Icon :icon="link.icon" class="h-4 w-4" />
+                      <Icon :icon="link.icon" class="h-4 w-4 shrink-0" />
                       {{ link.label }}
                     </RouterLink>
                     <a
@@ -156,11 +156,11 @@
                       :href="link.href"
                       target="_blank"
                       rel="noreferrer"
-                      class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
+                      class="inline-flex items-center gap-2 text-sm leading-5 font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400"
                     >
-                      <Icon :icon="link.icon" class="h-4 w-4" />
+                      <Icon :icon="link.icon" class="h-4 w-4 shrink-0" />
                       {{ link.label }}
-                      <Icon icon="ri:external-link-line" class="h-4 w-4 opacity-80" />
+                      <Icon icon="ri:external-link-line" class="h-4 w-4 shrink-0 opacity-80" />
                     </a>
                   </li>
                 </ul>
@@ -172,13 +172,13 @@
         <div class="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:flex-row lg:items-center lg:justify-between">
           <p>© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
           <div class="flex flex-wrap items-center gap-4 lg:justify-center">
-            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               萌ICP备20232336号
             </a>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               蜀ICP备2024074700号-1
             </a>
-            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               川公网安备51130402000151号
             </a>
           </div>
