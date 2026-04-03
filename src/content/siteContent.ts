@@ -154,13 +154,11 @@ export const homeContent = {
 
 export const joinContent = {
   title: '加入服务器',
-  summary: '显示打开此页面时服务器的状态。',
+  summary: '在桌面端查看实时在线状态，按以下步骤即可快速加入服务器。',
   servers: [
     {
       name: 'Craft233',
-      address: 'v4.mc.craft233.top:25565',
-      apiAddress: 'v4.mc.craft233.top:25565',
-      kind: 'Velocity',
+      address: 'mc.craft233.top',
     },
   ],
   steps: [

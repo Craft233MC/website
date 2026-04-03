@@ -96,6 +96,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { homeContent } from '@/content/siteContent'
+import { fetchServerStatus } from '@/utils/serverStatus'
 
 const isInternalAction = (
   action: (typeof homeContent.hero.actions)[number],
@@ -113,10 +114,9 @@ const serverStateLabel = computed(() => {
 
 onMounted(async () => {
   try {
-    const response = await fetch('https://api.mcsrvstat.us/3/mc.craft233.top')
-    const data = await response.json()
-    online.value = Boolean(data?.online)
-    playersOnline.value = Number(data?.players?.online ?? 0)
+    const data = await fetchServerStatus()
+    online.value = data.online
+    playersOnline.value = data.playersOnline
   } catch {
     online.value = false
     playersOnline.value = 0
