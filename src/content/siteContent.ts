@@ -37,7 +37,6 @@ export const navigation = [
   { label: '规则', to: '/rules' },
   { label: '赞助者们', to: '/sponsors' },
   { label: '友情链接', to: '/friendlinks' },
-  { label: '文档站', href: siteBrand.docsUrl },
 ] as const
 
 export const footerGroups = [
