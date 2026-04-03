@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: deploy to server
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+  push:
+   branches: [ "v2" ]
+  pull_request:
+   branches: [ "v2" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v4
+
+      - name: setup nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          
+      - name: install nodejs depends
+        run: npm install
+
+      - name: build website file
+        run: npm run generate
+
+      - name: SSH Server Deploy
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          source: dist/*
+          target: /opt/1panel/www/sites/dev.www.craft233.top/index/
+          rm: true
+          strip_components: 1
+          
