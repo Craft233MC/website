@@ -46,6 +46,7 @@ export const footerGroups = [
     links: [
       {
         label: 'QQ群',
+        icon: 'ri:qq-line',
         href:
           'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=QofGtNhyZdlU0kVZtr81sGxVDMzKGkkt&authKey=59dPS936wuYm%2Bg4qHFkMdo8IYTcdD6Jp8Q9kBb2Mmv8i7APEm0Ms2373ztiW97wE&noverify=0&group_code=830277457',
       },
@@ -54,25 +55,38 @@ export const footerGroups = [
   {
     title: 'Craft233',
     links: [
-      { label: 'Github', href: 'https://github.com/Craft233MC' },
-      { label: 'BiliBili', href: 'https://space.bilibili.com/3546655496342120' },
+      { label: 'Github', icon: 'ri:github-line', href: 'https://github.com/Craft233MC' },
+      { label: 'BiliBili', icon: 'ri:bilibili-line', href: 'https://space.bilibili.com/3546655496342120' },
     ],
   },
   {
     title: '宣传贴',
     links: [
-      { label: 'MineBBS', href: 'https://www.minebbs.com/threads/1-13-x-1-20-x-craft233-2.19401/' },
-      { label: '苦力怕论坛', href: 'https://klpbbs.com/thread-135065-1-1.html' },
-      { label: 'mcMod找服玩', href: 'https://play.mcmod.cn/sv20187552.html' },
-      { label: 'NameMC', href: 'https://zh-cn.namemc.com/server/mc.craft233.top' },
+      { label: 'MineBBS', icon: 'ri:book-open-line', href: 'https://www.minebbs.com/threads/1-13-x-1-20-x-craft233-2.19401/' },
+      { label: '苦力怕论坛', icon: 'ri:chat-3-line', href: 'https://klpbbs.com/thread-135065-1-1.html' },
+      { label: 'mcMod找服玩', icon: 'ri:compass-3-line', href: 'https://play.mcmod.cn/sv20187552.html' },
+      { label: 'NameMC', icon: 'ri:global-line', href: 'https://zh-cn.namemc.com/server/mc.craft233.top' },
     ],
   },
   {
     title: '相关链接',
     links: [
-      { label: '外部监测站', href: 'https://status.craft233.top' },
-      { label: '爱发电', href: 'https://afdian.com/a/neokoni/' },
+      { label: '外部监测站', icon: 'ri:pulse-line', href: 'https://status.craft233.top' },
+      { label: '爱发电', icon: 'ri:hand-heart-line', href: 'https://afdian.com/a/neokoni/' },
     ],
+  },
+] as const
+
+export const footerSocialLinks = [
+  {
+    label: 'GitHub',
+    icon: 'ri:github-line',
+    href: 'https://github.com/Craft233MC',
+  },
+  {
+    label: 'BiliBili',
+    icon: 'ri:bilibili-line',
+    href: 'https://space.bilibili.com/3546655496342120',
   },
 ] as const
 

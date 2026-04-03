@@ -2,7 +2,6 @@
   <section class="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
     <div class="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
       <div class="order-2 lg:order-1">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">{{ homeContent.hero.eyebrow }}</p>
         <h1 class="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
           {{ homeContent.hero.title }}
         </h1>
@@ -11,10 +10,10 @@
         </p>
 
         <div class="mt-8 flex flex-wrap gap-3 text-sm text-slate-600 dark:text-slate-300">
-          <div class="rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
+          <div class="rounded-md bg-slate-100 px-4 py-2 dark:bg-slate-800/70">
             当前在线：<span class="font-semibold text-emerald-600 dark:text-emerald-400">{{ serverStateLabel }}</span>
           </div>
-          <div class="rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
+          <div class="rounded-md bg-slate-100 px-4 py-2 dark:bg-slate-800/70">
             服务器状态：<span class="font-semibold" :class="online ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-500'">{{ online ? '在线' : '获取中' }}</span>
           </div>
         </div>
@@ -25,7 +24,7 @@
               v-if="isInternalAction(action)"
               :to="action.to"
               class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition"
-              :class="action.variant === 'primary' ? 'bg-emerald-600 text-white hover:bg-emerald-500' : 'border border-slate-300 bg-white text-slate-700 hover:border-emerald-500 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200'"
+              :class="action.variant === 'primary' ? 'bg-emerald-600 text-white hover:bg-emerald-500' : 'bg-slate-100 text-slate-700 hover:text-emerald-700 dark:bg-slate-800/70 dark:text-slate-200'"
             >
               {{ action.label }}
             </RouterLink>
@@ -34,7 +33,7 @@
               :href="action.href"
               target="_blank"
               rel="noreferrer"
-              class="inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-emerald-500 hover:text-emerald-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+              class="inline-flex items-center justify-center rounded-md bg-slate-100 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:bg-slate-800/70 dark:text-slate-200"
             >
               {{ action.label }}
             </a>
@@ -43,41 +42,38 @@
       </div>
 
       <div class="order-1 lg:order-2">
-        <div class="overflow-hidden rounded-md border border-slate-300 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
-          <div class="flex items-center justify-center border border-slate-200 bg-white p-8 dark:border-slate-700 dark:bg-slate-900">
+        <div class="overflow-hidden rounded-md bg-slate-100 p-6 dark:bg-slate-900/60">
+          <div class="flex items-center justify-center bg-white p-8 dark:bg-slate-900">
             <img :src="homeContent.hero.image" :alt="homeContent.hero.eyebrow + ' logo'" class="h-[14rem] w-auto sm:h-[18rem]" />
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-20 grid gap-8 lg:mt-28 lg:grid-cols-2">
+    <div class="mt-20 space-y-16 lg:mt-28">
       <article
-        v-for="item in homeContent.spotlights"
+        v-for="(item, index) in homeContent.spotlights"
         :key="item.title"
-        class="overflow-hidden rounded-md border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900"
+        class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12"
       >
-        <img :src="item.image" :alt="item.title" class="h-64 w-full object-cover" />
-        <div class="p-7 sm:p-8">
+        <img :src="item.image" :alt="item.title" class="h-72 w-full rounded-md object-cover" :class="index % 2 === 1 ? 'lg:order-2' : ''" />
+        <div :class="index % 2 === 1 ? 'lg:order-1' : ''">
           <h2 class="text-2xl font-bold tracking-tight">{{ item.title }}</h2>
-          <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">{{ item.description }}</p>
+          <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">{{ item.description }}</p>
         </div>
       </article>
     </div>
 
     <section class="mt-20 lg:mt-28">
-      <div class="max-w-2xl">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">特色</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">我们的特色</h2>
-      </div>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">我们的特色</h2>
 
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="feature in homeContent.features"
           :key="feature.title"
-          class="rounded-md border border-slate-300 bg-white p-6 dark:border-slate-700 dark:bg-slate-900"
+          class="bg-slate-100 p-6 dark:bg-slate-900/60"
         >
-          <div class="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-emerald-300 bg-emerald-50 text-base font-bold text-emerald-700 dark:border-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300">✦</div>
+          <div class="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-emerald-100 text-base font-bold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">✦</div>
           <h3 class="mt-5 text-lg font-semibold">{{ feature.title }}</h3>
           <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ feature.description }}</p>
         </div>
@@ -86,7 +82,6 @@
 
     <section class="mt-20 lg:mt-28">
       <div class="text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">团队</p>
         <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{{ homeContent.teamTitle }}</h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300">{{ homeContent.teamDescription }}</p>
       </div>
@@ -95,9 +90,9 @@
         <article
           v-for="member in homeContent.team"
           :key="member.name"
-          class="rounded-md border border-slate-300 bg-white p-8 text-center dark:border-slate-700 dark:bg-slate-900"
+          class="bg-slate-100 p-8 text-center dark:bg-slate-900/60"
         >
-          <img :src="member.avatar" :alt="member.name" class="mx-auto h-24 w-24 rounded-full border border-slate-200 object-cover dark:border-slate-700" />
+          <img :src="member.avatar" :alt="member.name" class="mx-auto h-24 w-24 rounded-full object-cover" />
           <h3 class="mt-5 text-xl font-semibold">{{ member.name }}</h3>
           <p class="mt-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">{{ member.role }}</p>
           <p v-for="line in member.bio" :key="line" class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -110,7 +105,7 @@
               :href="link.href"
               target="_blank"
               rel="noreferrer"
-              class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-800 dark:text-slate-200 dark:hover:border-emerald-700 dark:hover:text-emerald-400"
+              class="rounded-md bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:text-emerald-400"
             >
               {{ link.label }}
             </a>

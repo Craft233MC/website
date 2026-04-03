@@ -7,7 +7,7 @@
       跳到内容
     </a>
 
-    <header class="sticky top-0 z-50 border-b border-white/40 bg-white/75 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/75">
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-xl dark:bg-slate-950/85">
       <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <RouterLink to="/" class="flex items-center gap-3">
           <img :src="siteBrand.logo" :alt="siteBrand.name + ' logo'" class="h-8 w-auto" />
@@ -22,8 +22,8 @@
             <RouterLink
               v-if="'to' in item"
               :to="item.to"
-              class="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-900 hover:text-white dark:text-slate-200 dark:hover:bg-white dark:hover:text-slate-900"
-              active-class="bg-emerald-500 text-white shadow-soft hover:bg-emerald-500 hover:text-white dark:bg-emerald-500 dark:text-white"
+              class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+              active-class="nav-link-active"
             >
               {{ item.label }}
             </RouterLink>
@@ -32,7 +32,7 @@
               :href="item.href"
               target="_blank"
               rel="noreferrer"
-              class="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-900 hover:text-white dark:text-slate-200 dark:hover:bg-white dark:hover:text-slate-900"
+              class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
             >
               {{ item.label }}
             </a>
@@ -117,7 +117,7 @@
       <slot />
     </main>
 
-    <footer class="mt-24 border-t border-white/40 bg-white/55 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/55">
+    <footer class="mt-24 bg-white/65 backdrop-blur-xl dark:bg-slate-950/65">
       <div class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1fr]">
           <div>
@@ -137,8 +137,10 @@
             <p class="mb-4 text-sm font-semibold text-slate-500 uppercase tracking-[0.18em] dark:text-slate-400">{{ group.title }}</p>
             <ul class="space-y-3">
               <li v-for="link in group.links" :key="link.label">
-                <a :href="link.href" target="_blank" rel="noreferrer" class="text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400">
+                <a :href="link.href" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-slate-700 transition hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400">
+                  <Icon :icon="link.icon" class="h-4 w-4" />
                   {{ link.label }}
+                  <Icon icon="ri:external-link-line" class="h-4 w-4 opacity-80" />
                 </a>
               </li>
             </ul>
@@ -148,9 +150,28 @@
         <div class="mt-12 flex flex-col gap-4 border-t border-slate-200 pt-8 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:flex-row lg:items-center lg:justify-between">
           <p>© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
           <div class="flex flex-wrap items-center gap-4">
-            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer">萌ICP备20232336号</a>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2024074700号-1</a>
-            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer">川公网安备51130402000151号</a>
+            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+              <Icon icon="ri:shield-check-line" class="h-4 w-4" />萌ICP备20232336号
+            </a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+              <Icon icon="ri:file-list-3-line" class="h-4 w-4" />蜀ICP备2024074700号-1
+            </a>
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400">
+              <Icon icon="ri:government-line" class="h-4 w-4" />川公网安备51130402000151号
+            </a>
+          </div>
+          <div class="flex items-center gap-4 text-slate-600 dark:text-slate-300">
+            <a
+              v-for="social in footerSocialLinks"
+              :key="social.label"
+              :href="social.href"
+              :aria-label="social.label"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-slate-100 transition hover:text-emerald-600 dark:bg-slate-800 dark:hover:text-emerald-400"
+            >
+              <Icon :icon="social.icon" class="h-5 w-5" />
+            </a>
           </div>
         </div>
       </div>
@@ -159,9 +180,10 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { footerGroups, legalNotice, navigation, siteBrand } from '@/content/siteContent'
+import { footerGroups, footerSocialLinks, legalNotice, navigation, siteBrand } from '@/content/siteContent'
 
 const route = useRoute()
 const menuOpen = ref(false)
@@ -206,5 +228,57 @@ watch(
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(5 150 105);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.28s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link:active::after {
+  animation: nav-line-bounce 0.34s ease;
+}
+
+.nav-link-active::after {
+  transform: scaleX(1);
+}
+
+.nav-link-active {
+  color: rgb(5 150 105);
+}
+
+.dark .nav-link-active {
+  color: rgb(52 211 153);
+}
+
+@keyframes nav-line-bounce {
+  0% {
+    transform: scaleX(0);
+  }
+  55% {
+    transform: scaleX(1.14);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 </style>
