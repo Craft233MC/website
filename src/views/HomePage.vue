@@ -1,11 +1,11 @@
 <template>
-  <section class="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
-    <div class="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+  <section class="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 lg:pb-32 lg:pt-20">
+    <div class="grid gap-10 lg:min-h-[30rem] lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
       <div class="order-2 lg:order-1">
-        <h1 class="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
+        <h1 class="max-w-3xl text-3xl font-bold leading-[1.2] tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
           {{ homeContent.hero.title }}
         </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300 sm:text-xl">
+        <p class="mt-7 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg lg:text-xl">
           {{ homeContent.hero.subtitle }}
         </p>
 
