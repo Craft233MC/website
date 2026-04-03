@@ -140,7 +140,7 @@
           <div>
             <div class="flex flex-wrap content-start gap-x-12 gap-y-8">
               <div v-for="group in footerGroups" :key="group.title" class="w-fit max-w-[15rem]">
-                <p class="mb-4 text-sm font-semibold text-slate-500 tracking-[0.18em] dark:text-slate-400" :class="group.title === 'Craft233' ? '' : 'uppercase'">{{ group.title }}</p>
+                <p class="mb-2 text-sm font-semibold text-slate-500 tracking-[0.08em] dark:text-slate-400" :class="group.title === 'Craft233' ? '' : 'uppercase'">{{ group.title }}</p>
                 <ul class="space-y-3">
                   <li v-for="link in group.links" :key="link.label">
                     <RouterLink
