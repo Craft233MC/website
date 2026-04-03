@@ -9,6 +9,9 @@ export const pages = {
   home: {
     title: '四周目',
   },
+  about: {
+    title: '关于 Craft233',
+  },
   join: {
     title: '加入服务器',
   },
@@ -33,6 +36,7 @@ export const navigation = [
   { label: '首页', to: '/' },
   { label: '加入', to: '/join' },
   { label: '规则', to: '/rules' },
+  { label: '关于', to: '/about' },
 ] as const
 
 export const footerGroups = [
@@ -73,6 +77,7 @@ export const footerGroups = [
   {
     title: '其他',
     links: [
+      { label: '关于', icon: 'ri:information-line', to: '/about' },
       { label: '存档', icon: 'ri:archive-line', to: '/archive' },
       { label: '贡献', icon: 'ri:gift-line', to: '/contribute' },
       { label: '赞助者们', icon: 'ri:heart-3-line', to: '/sponsors' },
@@ -274,3 +279,63 @@ export const friendLinksContent = [
     intro: ['在方块世界中，与毛毛共绘未来'],
   },
 ] as const
+
+export const aboutContent = {
+  title: '关于 Craft233',
+  subtitle:
+    'Craft233 开始于 2021 年 6 月 12 日。那时我们还在我的世界中国版，用的是一台租赁服，定位是轻生存服务器。',
+  highlights: [
+    {
+      label: '起始时间',
+      value: '2021.06.12',
+      description: '中国版小租赁服阶段',
+    },
+    {
+      label: '品牌建立',
+      value: '2023.08.04',
+      description: '转向国际服并命名为 Craft233',
+    },
+    {
+      label: '当前阶段',
+      value: '第三周目运行中',
+      description: '第四周目处于开发筹备阶段',
+    },
+  ],
+  paragraphs: [
+    '早期阶段使用的是中国版的租赁服，主要受服务端性能和存档稳定性影响，最终决定迁移。',
+    '2023 年 8 月 4 日，我们转向国际服，并正式使用 “Craft233” 这个名字。',
+    '目前第一、第二周目都已结档。第三周目在 6 月 18 日开始宣传并上线，到现在仍在运行；第四周目处于开发期。',
+  ],
+  timeline: [
+    {
+      date: '2021.06.12',
+      title: '项目起步',
+      description: '在我的世界中国版以租赁服形式启动，当时定位为轻生存服务器。',
+    },
+    {
+      date: '2023.08.04',
+      title: '迁移与命名',
+      description: '因性能限制和稳定性问题转向国际服，并正式命名为 Craft233。',
+    },
+    {
+      date: '2023.07 — 2024.02',
+      title: '第一周目结档',
+      description: '完成首个完整运营周期并沉淀早期经验。',
+    },
+    {
+      date: '2024.03 — 2025.04',
+      title: '第二周目结档',
+      description: '扩展玩法与社区协作，完成第二阶段存档归档。',
+    },
+    {
+      date: '6.18 至今',
+      title: '第三周目运行中',
+      description: '第三周目已宣传并持续运行，服务保持活跃。',
+    },
+    {
+      date: '进行中',
+      title: '第四周目开发期',
+      description: '新一阶段方案正在设计与开发中。',
+    },
+  ],
+} as const
