@@ -1,4 +1,5 @@
 import {
+  aboutContent,
   archiveContent,
   contributeContent,
   friendLinksContent,
@@ -36,6 +37,13 @@ const seoMap: Record<RouteKey, SeoInfo> = {
     description: shortText(`${siteBrand.description}${homeContent.hero.subtitle}${homeContent.spotlights[0]?.description ?? ''}`, 160),
     overview: compact([...homeContent.spotlights.map((item) => item.title), homeContent.teamTitle]),
     canonical: `${siteOrigin}/`,
+    image: homeContent.hero.image,
+  },
+  about: {
+    title: `Craft233 - ${pages.about.title}`,
+    description: shortText(`${aboutContent.subtitle}${aboutContent.paragraphs.join('')}`, 160),
+    overview: compact(aboutContent.timeline.map((item) => item.title)),
+    canonical: `${siteOrigin}/about`,
     image: homeContent.hero.image,
   },
   join: {
