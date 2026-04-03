@@ -169,20 +169,20 @@
           </div>
         </div>
 
-        <div class="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:flex-row lg:items-center lg:justify-between">
-          <p class="hidden text-center lg:block">© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
-          <div class="flex flex-nowrap items-center justify-center gap-2 lg:gap-2.5">
-            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+        <div class="mt-10 grid grid-cols-1 gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-center">
+          <p class="hidden lg:block lg:justify-self-start">© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
+          <div class="flex flex-nowrap items-center justify-center gap-1.5 lg:justify-self-center lg:gap-2.5">
+            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex whitespace-nowrap items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               萌ICP备20232336号
             </a>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex whitespace-nowrap items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               蜀ICP备2024074700号-1
             </a>
-            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex whitespace-nowrap items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               川公网安备51130402000151号
             </a>
           </div>
-          <div class="flex items-center justify-center gap-4 text-slate-600 dark:text-slate-300 lg:justify-end">
+          <div class="flex items-center justify-center gap-4 text-slate-600 dark:text-slate-300 lg:justify-self-end">
             <a
               v-for="social in footerSocialLinks"
               :key="social.label"
