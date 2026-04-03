@@ -8,7 +8,7 @@
     </a>
 
     <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/45 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/45">
-      <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div class="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <RouterLink to="/" class="flex items-center gap-3">
           <img :src="siteBrand.logo" :alt="siteBrand.name + ' logo'" class="h-8 w-auto" />
           <div class="leading-tight">
@@ -39,7 +39,7 @@
           </template>
         </nav>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center justify-end gap-2">
           <button
             type="button"
             class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-transparent text-slate-700 transition hover:text-emerald-600 dark:border-slate-800 dark:text-slate-200 dark:hover:text-emerald-300"
@@ -170,8 +170,8 @@
         </div>
 
         <div class="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:flex-row lg:items-center lg:justify-between">
-          <p>© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
-          <div class="flex flex-wrap items-center gap-4 lg:justify-center">
+          <p class="hidden text-center lg:block">© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
+          <div class="flex flex-nowrap items-center justify-center gap-2 lg:gap-2.5">
             <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               萌ICP备20232336号
             </a>
@@ -182,7 +182,7 @@
               川公网安备51130402000151号
             </a>
           </div>
-          <div class="flex items-center gap-4 text-slate-600 dark:text-slate-300 lg:justify-end">
+          <div class="flex items-center justify-center gap-4 text-slate-600 dark:text-slate-300 lg:justify-end">
             <a
               v-for="social in footerSocialLinks"
               :key="social.label"
