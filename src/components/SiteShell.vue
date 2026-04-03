@@ -8,21 +8,21 @@
     </a>
 
     <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/45 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/45">
-      <div class="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <RouterLink to="/" class="flex items-center gap-3">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:grid lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:px-8 lg:py-5">
+        <RouterLink to="/" class="inline-flex w-fit shrink-0 items-center gap-3">
           <img :src="siteBrand.logo" :alt="siteBrand.name + ' logo'" class="h-8 w-auto" />
           <div class="leading-tight">
-            <div class="text-sm font-semibold tracking-[0.06em] text-emerald-600 dark:text-emerald-400">Craft233</div>
-            <div class="text-xs text-slate-500 dark:text-slate-400">Minecraft 生存服务器</div>
+            <div class="text-sm font-semibold tracking-[0.06em] text-emerald-600 dark:text-emerald-400 lg:text-base">Craft233</div>
+            <div class="hidden text-xs text-slate-500 dark:text-slate-400 sm:block lg:text-sm">Minecraft 生存服务器</div>
           </div>
         </RouterLink>
 
-        <nav class="hidden items-center gap-1 lg:flex">
+        <nav class="hidden items-center gap-1 lg:flex lg:justify-self-center">
           <template v-for="item in navigation" :key="item.label">
             <RouterLink
               v-if="'to' in item"
               :to="item.to"
-              class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+              class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 lg:px-2.5 lg:text-base"
               active-class="nav-link-active"
             >
               <span class="nav-link-text">{{ item.label }}</span>
@@ -32,17 +32,17 @@
               :href="item.href"
               target="_blank"
               rel="noreferrer"
-              class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+              class="nav-link px-2 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 lg:px-2.5 lg:text-base"
             >
               <span class="nav-link-text">{{ item.label }}</span>
             </a>
           </template>
         </nav>
 
-        <div class="flex items-center justify-end gap-2">
+        <div class="flex items-center gap-2 lg:justify-self-end">
           <button
             type="button"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-transparent text-slate-700 transition hover:text-emerald-600 dark:border-slate-800 dark:text-slate-200 dark:hover:text-emerald-300"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-transparent text-slate-700 transition hover:text-emerald-600 dark:border-slate-800 dark:text-slate-200 dark:hover:text-emerald-300 lg:h-11 lg:w-11"
             :aria-label="theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'"
             @click="toggleTheme"
           >
@@ -72,9 +72,9 @@
     </header>
 
     <Transition name="fade">
-      <div v-if="menuOpen" class="fixed inset-0 z-[60] bg-slate-950/40 backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
+      <div v-if="menuOpen" class="fixed inset-0 z-[60] flex items-start justify-center bg-slate-950/40 p-4 pt-[4.5rem] backdrop-blur-sm lg:hidden" @click.self="menuOpen = false">
         <Transition name="mobile-menu" appear>
-          <div class="mx-auto mt-3 w-[min(94vw,42rem)] rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/95">
+          <div class="w-full max-w-xl rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/95">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <div class="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-600 dark:text-emerald-400">Craft233</div>
@@ -170,15 +170,15 @@
         </div>
 
         <div class="mt-10 grid grid-cols-1 gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-center">
-          <p class="hidden lg:block lg:justify-self-start">© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
-          <div class="flex flex-nowrap items-center justify-center gap-1.5 lg:justify-self-center lg:gap-2.5">
-            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex whitespace-nowrap items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+          <p class="text-center lg:justify-self-start lg:text-left">© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
+          <div class="flex flex-col items-center justify-center gap-2 sm:flex-row sm:flex-wrap sm:gap-3 lg:justify-self-center lg:gap-2.5">
+            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               萌ICP备20232336号
             </a>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex whitespace-nowrap items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               蜀ICP备2024074700号-1
             </a>
-            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex whitespace-nowrap items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               川公网安备51130402000151号
             </a>
           </div>
