@@ -15,6 +15,9 @@ export const pages = {
   join: {
     title: '加入服务器',
   },
+  maps: {
+    title: '网页地图',
+  },
   callback: {
     title: '授权回调',
   },
@@ -81,6 +84,7 @@ export const footerGroups = [
     title: '其他',
     links: [
       { label: '存档', icon: 'ri:archive-line', to: '/archive' },
+      { label: '网页地图', icon: 'ri:map-2-line', to: '/maps' },
       { label: '贡献', icon: 'ri:gift-line', to: '/contribute' },
       { label: '赞助者们', icon: 'ri:heart-3-line', to: '/sponsors' },
       { label: '友情链接', icon: 'ri:links-line', to: '/friendlinks' },
@@ -184,6 +188,25 @@ export const joinContent = {
     {
       title: '填入信息并保存',
       image: 'https://docs.craft233.top/assets/javaAddServer.C_XH7osL.png',
+    },
+  ],
+} as const
+
+export const serverMapContent = {
+  title: '网页地图',
+  summary: '从这里选择要查看的服务器网页地图。点击后会在新页面打开，方便快速查看各个世界的布局与进度。',
+  items: [
+    {
+      key: 'main',
+      title: '主服网页地图',
+      description: '查看主世界、城镇与常用设施的整体分布。',
+      url: 'https://map.craft233.top/',
+    },
+    {
+      key: 'oneblock',
+      title: '单方块网页地图',
+      description: '查看单方块世界的扩展进度与当前区域。',
+      url: 'https://map.craft233.top/oneblock/',
     },
   ],
 } as const

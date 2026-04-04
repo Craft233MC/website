@@ -8,6 +8,7 @@ import {
   pages,
   rulesContent,
   siteBrand,
+  serverMapContent,
   sponsorsContent,
 } from '@/content/siteContent'
 import siteConfig from '@/config/site.config.json'
@@ -55,6 +56,13 @@ const seoMap: Record<RouteKey, SeoInfo> = {
     overview: compact(joinContent.steps.map((step) => step.title)),
     canonical: `${siteOrigin}${siteBasePath}/join`,
     image: joinContent.steps[0]?.image ?? homeContent.hero.image,
+  },
+  maps: {
+    title: `Craft233 - ${pages.maps.title}`,
+    description: shortText(`${serverMapContent.summary}${serverMapContent.items.map((item) => `${item.title}${item.description ?? ''}`).join('；')}`, 160),
+    overview: compact(serverMapContent.items.map((item) => item.title)),
+    canonical: `${siteOrigin}${siteBasePath}/maps`,
+    image: homeContent.hero.image,
   },
   callback: {
     title: `Craft233 - ${pages.callback.title}`,

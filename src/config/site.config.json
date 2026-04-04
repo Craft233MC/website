@@ -5,6 +5,10 @@
   "callbackAppLinks": {
     "RhythmLink": "https://github.com/neokoni/rhythmlink"
   },
+  "serverMapLinks": {
+    "main": "https://map.craft233.top/",
+    "oneblock": "https://map.craft233.top/oneblock/"
+  },
   "minecraftStatusApi": {
     "url": "https://motd.minebbs.com/api/status",
     "params": {

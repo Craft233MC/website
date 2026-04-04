@@ -15,6 +15,7 @@
 ## 路由页面
 - `/` 首页
 - `/join` 加入服务器
+- `/maps` 网页地图
 - `/rules` 规则区
 - `/archive` 历史存档下载
 - `/contribute` 贡献

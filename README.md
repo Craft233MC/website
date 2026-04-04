@@ -35,6 +35,21 @@ Most user-editable content is stored outside of components:
 - Keys are also used as the displayed app name when matched.
 - When app name is mapped, callback page app label in the title will be rendered as an external link.
 
+`site.config.json` also supports server map links:
+
+```json
+{
+	"serverMapLinks": {
+		"main": "https://map.craft233.top/",
+		"oneblock": "https://map.craft233.top/oneblock/"
+	}
+}
+```
+
+- Keys are case-sensitive map IDs used by the map page.
+- Values are the final map addresses opened in a new page.
+- Map titles and descriptions are kept in [src/content/siteContent.ts](src/content/siteContent.ts).
+
 The favicon is downloaded during the prebuild step from the configured remote URL when available. If the download fails, the build continues and the existing favicon is left unchanged.
 
 When changing public-facing text, links, or branding, prefer updating these files instead of editing components directly.
