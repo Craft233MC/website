@@ -21,6 +21,20 @@ Most user-editable content is stored outside of components:
 - [src/config/server.ts](src/config/server.ts) — Minecraft status API runtime config (reuses server address from `joinContent`)
 - [src/utils/seo.ts](src/utils/seo.ts) — runtime SEO metadata mapping
 
+`site.config.json` also supports callback app mapping:
+
+```json
+{
+	"callbackAppLinks": {
+		"rhythmlink": "https://github.com/neokoni/rhythmlink"
+	}
+}
+```
+
+- Keys are case-insensitive app names used by `/callback?app=...`.
+- Keys are also used as the displayed app name when matched.
+- When app name is mapped, callback page app label in the title will be rendered as an external link.
+
 The favicon is downloaded during the prebuild step from the configured remote URL when available. If the download fails, the build continues and the existing favicon is left unchanged.
 
 When changing public-facing text, links, or branding, prefer updating these files instead of editing components directly.

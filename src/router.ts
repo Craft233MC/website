@@ -8,6 +8,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: () => import('@/views/HomePage.vue'), meta: { title: pages.home.title } },
     { path: '/about', name: 'about', component: () => import('@/views/AboutPage.vue'), meta: { title: pages.about.title } },
     { path: '/join', name: 'join', component: () => import('@/views/JoinPage.vue'), meta: { title: pages.join.title } },
+    { path: '/callback', name: 'callback', component: () => import('@/views/CallbackPage.vue'), meta: { title: pages.callback.title } },
     { path: '/rules', name: 'rules', component: () => import('@/views/RulesPage.vue'), meta: { title: pages.rules.title } },
     { path: '/archive', name: 'archive', component: () => import('@/views/ArchivePage.vue'), meta: { title: pages.archive.title } },
     { path: '/contribute', name: 'contribute', component: () => import('@/views/ContributePage.vue'), meta: { title: pages.contribute.title } },

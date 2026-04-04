@@ -15,6 +15,9 @@ export const pages = {
   join: {
     title: '加入服务器',
   },
+  callback: {
+    title: '授权回调',
+  },
   rules: {
     title: '规则区',
   },

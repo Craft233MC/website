@@ -22,6 +22,7 @@ export type SeoInfo = {
   overview: string
   canonical: string
   image: string
+  robots?: string
 }
 
 type RouteKey = keyof typeof pages | 'not-found'
@@ -54,6 +55,14 @@ const seoMap: Record<RouteKey, SeoInfo> = {
     overview: compact(joinContent.steps.map((step) => step.title)),
     canonical: `${siteOrigin}${siteBasePath}/join`,
     image: joinContent.steps[0]?.image ?? homeContent.hero.image,
+  },
+  callback: {
+    title: `Craft233 - ${pages.callback.title}`,
+    description: '第三方应用授权回调页面，用于生成服务器端执行命令。',
+    overview: 'OAuth callback',
+    canonical: `${siteOrigin}${siteBasePath}/callback`,
+    image: homeContent.hero.image,
+    robots: 'noindex, nofollow',
   },
   rules: {
     title: `Craft233 - ${pages.rules.title}`,
@@ -149,6 +158,7 @@ export const applySeo = (routeKey: RouteKey) => {
   ensureMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: seo.title })
   ensureMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: seo.description })
   ensureMeta('meta[name="theme-color"]', { name: 'theme-color', content: siteConfig.themeColor ?? '#10b981' })
+  ensureMeta('meta[name="robots"]', { name: 'robots', content: seo.robots ?? 'index, follow' })
 
   updateLink('canonical', seo.canonical)
   updateLink('icon', siteFavicon, { type: 'image/png' })
