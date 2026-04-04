@@ -118,6 +118,7 @@ export const homeContent = {
     subtitle: '从基础生存出发，保留原版乐趣，和玩家一起慢慢建设。',
     actions: [
       { label: '加入服务器', to: '/join', variant: 'primary' },
+      { label: '网页地图', to: '/maps', variant: 'ghost' },
       { label: '查看规则', to: '/rules', variant: 'ghost' },
       { label: '文档站', href: siteBrand.docsUrl, variant: 'outline' },
     ],

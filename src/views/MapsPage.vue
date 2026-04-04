@@ -10,18 +10,12 @@
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <RouterLink
-            to="/join"
+            to="/"
             class="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400"
           >
-            返回加入页面
+            返回主页
           </RouterLink>
         </div>
-      </div>
-
-      <div class="rounded-xl border border-slate-200/80 px-6 py-5 dark:border-slate-800/80">
-        <p class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-slate-400">地图概览</p>
-        <p class="mt-4 text-xl font-semibold text-slate-900 dark:text-slate-100">共 {{ resolvedMaps.length }} 个入口</p>
-        <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">点击后会在新页面打开网页地图，适合在游玩时快速查看地形与建筑分布。</p>
       </div>
     </div>
 
@@ -41,9 +35,6 @@
           </div>
 
           <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p class="break-all text-xs text-slate-500 dark:text-slate-400">
-              {{ map.url }}
-            </p>
             <a
               :href="map.url"
               target="_blank"

@@ -25,14 +25,6 @@
           </button>
         </div>
 
-        <div class="mt-4 flex flex-wrap gap-3">
-          <RouterLink
-            to="/maps"
-            class="inline-flex items-center justify-center rounded-md border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:text-emerald-700 dark:border-slate-700 dark:text-slate-200 dark:hover:text-emerald-400"
-          >
-            查看网页地图
-          </RouterLink>
-        </div>
       </div>
 
       <div class="hidden lg:block">
