@@ -41,6 +41,7 @@ export const pages = {
 export const navigation = [
   { label: '首页', to: '/' },
   { label: '加入', to: '/join' },
+  { label: '地图', to: '/maps' },
   { label: '规则', to: '/rules' },
   { label: '关于', to: '/about' },
 ] as const
