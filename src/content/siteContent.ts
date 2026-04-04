@@ -159,13 +159,6 @@ export const homeContent = {
       bio: ['这个人很神秘，没有留下任何东西。'],
       links: [],
     },
-    {
-      name: 'gjyyds1',
-      role: '管理员 · 礼包大使',
-      avatar: 'https://q1.qlogo.cn/g?b=qq&nk=2712878343&s=640',
-      bio: ['我除会了 eee 还会 eee 的。'],
-      links: [],
-    },
   ],
 } as const
 
