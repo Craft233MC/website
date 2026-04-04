@@ -8,20 +8,55 @@ const publicDir = path.join(rootDir, 'public')
 const fontsDir = path.join(publicDir, 'fonts')
 const faviconPath = path.join(publicDir, 'favicon.png')
 const legacyFaviconPath = path.join(publicDir, 'favicon.ico')
+const robotsPath = path.join(publicDir, 'robots.txt')
 const fontPath = path.join(fontsDir, 'InterVariable.woff2')
 const fontSource = 'https://rsms.me/inter/font-files/InterVariable.woff2'
 const siteConfigPath = path.join(rootDir, 'src', 'config', 'site.config.json')
+const seoConfigPath = path.join(rootDir, 'src', 'config', 'seo.config.json')
 
 let faviconSource = ''
+let basePath = '/'
+let noIndexPaths = ['/callback']
 
 try {
   const siteConfig = JSON.parse(await fs.readFile(siteConfigPath, 'utf8'))
   faviconSource = typeof siteConfig.faviconSource === 'string' ? siteConfig.faviconSource.trim() : ''
+  basePath = typeof siteConfig.basePath === 'string' ? siteConfig.basePath.trim() || '/' : '/'
 } catch {
   faviconSource = ''
 }
 
+try {
+  const seoConfig = JSON.parse(await fs.readFile(seoConfigPath, 'utf8'))
+  if (Array.isArray(seoConfig.noIndexPaths)) {
+    noIndexPaths = seoConfig.noIndexPaths.filter((value) => typeof value === 'string' && value.trim().length > 0)
+  }
+} catch {
+  // Fall back to the default blacklist.
+}
+
+const normalizeBasePath = (value) => {
+  if (!value || value === '/') {
+    return ''
+  }
+
+  return value.startsWith('/') ? value.replace(/\/$/, '') : `/${value.replace(/\/$/, '')}`
+}
+
+const joinPath = (prefix, pathname) => {
+  if (!pathname.startsWith('/')) {
+    pathname = `/${pathname}`
+  }
+
+  if (!prefix) {
+    return pathname
+  }
+
+  return `${prefix}${pathname}`.replace(/\/+/g, '/')
+}
+
 await fs.mkdir(fontsDir, { recursive: true })
+await fs.mkdir(publicDir, { recursive: true })
 
 await fs.rm(legacyFaviconPath, { force: true })
 
@@ -48,3 +83,13 @@ const fontBuffer = Buffer.from(await fontResponse.arrayBuffer())
 await fs.writeFile(fontPath, fontBuffer)
 
 console.log(`font written to ${fontPath}`)
+
+const robotsLines = [
+  'User-agent: *',
+  ...noIndexPaths.map((pathname) => `Disallow: ${joinPath(normalizeBasePath(basePath), pathname.trim())}`),
+  '',
+]
+
+await fs.writeFile(robotsPath, robotsLines.join('\n'), 'utf8')
+
+console.log(`robots written to ${robotsPath}`)

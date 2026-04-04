@@ -11,6 +11,7 @@ import {
   serverMapContent,
   sponsorsContent,
 } from '@/content/siteContent'
+import seoConfig from '@/config/seo.config.json'
 import siteConfig from '@/config/site.config.json'
 
 export const siteOrigin = window.location.origin
@@ -27,6 +28,22 @@ export type SeoInfo = {
 }
 
 type RouteKey = keyof typeof pages | 'not-found'
+
+const noIndexPaths = new Set((seoConfig.noIndexPaths ?? []).filter((value): value is string => typeof value === 'string'))
+
+const routePaths: Record<RouteKey, string | null> = {
+  home: '/',
+  about: '/about',
+  join: '/join',
+  maps: '/maps',
+  callback: '/callback',
+  rules: '/rules',
+  archive: '/archive',
+  contribute: '/contribute',
+  sponsors: '/sponsors',
+  friendlinks: '/friendlinks',
+  'not-found': null,
+}
 
 const compact = (values: string[], limit = 3) => values.filter(Boolean).slice(0, limit).join('、')
 
@@ -152,6 +169,8 @@ const updateLink = (rel: string, href: string, attrs: Record<string, string> = {
 
 export const applySeo = (routeKey: RouteKey) => {
   const seo = seoMap[routeKey] ?? seoMap.home
+  const routePath = routePaths[routeKey]
+  const shouldNoIndex = routeKey === 'not-found' || (routePath ? noIndexPaths.has(routePath) : false)
 
   document.title = seo.title
 
@@ -166,7 +185,7 @@ export const applySeo = (routeKey: RouteKey) => {
   ensureMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: seo.title })
   ensureMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: seo.description })
   ensureMeta('meta[name="theme-color"]', { name: 'theme-color', content: siteConfig.themeColor ?? '#10b981' })
-  ensureMeta('meta[name="robots"]', { name: 'robots', content: seo.robots ?? 'index, follow' })
+  ensureMeta('meta[name="robots"]', { name: 'robots', content: seo.robots ?? (shouldNoIndex ? 'noindex, nofollow' : 'index, follow') })
 
   updateLink('canonical', seo.canonical)
   updateLink('icon', siteFavicon, { type: 'image/png' })

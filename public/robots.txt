@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /callback
+Disallow: /404
