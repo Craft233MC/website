@@ -192,16 +192,10 @@ export const serverMapContent = {
   summary: '从这里选择要查看的服务器网页地图。点击后会在新页面打开，方便快速查看各个世界的布局与进度。',
   items: [
     {
-      key: 'main',
+      key: 'lights',
       title: '主服网页地图',
       description: '查看主世界、城镇与常用设施的整体分布。',
-      url: 'https://map.craft233.top/',
-    },
-    {
-      key: 'oneblock',
-      title: '单方块网页地图',
-      description: '查看单方块世界的扩展进度与当前区域。',
-      url: 'https://map.craft233.top/oneblock/',
+      url: 'https://www.craft233.top/map/lights',
     },
   ],
 } as const
