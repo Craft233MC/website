@@ -9,15 +9,32 @@ const publicDir = path.join(rootDir, 'public')
 const faviconPath = path.join(publicDir, 'favicon.ico')
 const sourceUrl = 'https://res.neokoni.ink/craft233/img/craft233_logo_64.png'
 
-await fs.mkdir(publicDir, { recursive: true })
+const runWithRetryAndIgnore = async (taskName, task) => {
+  try {
+    await task()
+  } catch (firstError) {
+    console.warn(`[favicon] ${taskName} failed on first attempt: ${firstError instanceof Error ? firstError.message : String(firstError)}`)
+    console.warn(`[favicon] Retrying ${taskName} once...`)
 
-const response = await fetch(sourceUrl)
-if (!response.ok) {
-  throw new Error(`Failed to fetch favicon source: ${response.status} ${response.statusText}`)
+    try {
+      await task()
+    } catch (secondError) {
+      console.warn(`[favicon] ${taskName} failed again and will be ignored: ${secondError instanceof Error ? secondError.message : String(secondError)}`)
+    }
+  }
 }
 
-const pngBuffer = Buffer.from(await response.arrayBuffer())
-const icoBuffer = await pngToIco(pngBuffer)
-await fs.writeFile(faviconPath, icoBuffer)
+await fs.mkdir(publicDir, { recursive: true })
 
-console.log(`favicon written to ${faviconPath}`)
+await runWithRetryAndIgnore('favicon generation', async () => {
+  const response = await fetch(sourceUrl)
+  if (!response.ok) {
+    throw new Error(`Failed to fetch favicon source: ${response.status} ${response.statusText}`)
+  }
+
+  const pngBuffer = Buffer.from(await response.arrayBuffer())
+  const icoBuffer = await pngToIco(pngBuffer)
+  await fs.writeFile(faviconPath, icoBuffer)
+
+  console.log(`favicon written to ${faviconPath}`)
+})
