@@ -10,20 +10,21 @@
       <template v-else>
         <p class="text-sm font-semibold tracking-[0.2em] text-emerald-600 uppercase dark:text-emerald-400">授权完成</p>
         <h1 class="mt-4 text-2xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
-          您已完成对
-          <a
-            v-if="displayAppName && appLink"
-            :href="appLink"
-            target="_blank"
-            rel="noreferrer"
-            class="text-emerald-600 hover:text-emerald-500 dark:text-emerald-400"
-          >
-            {{ displayAppName }}
-          </a>
-          <span v-else>
-            {{ displayAppName || '该应用' }}
-          </span>
-          的授权
+          <template v-if="appLink && displayAppName">
+            您已完成对
+            <a
+              :href="appLink"
+              target="_blank"
+              rel="noreferrer"
+              class="text-emerald-600 hover:text-emerald-500 dark:text-emerald-400"
+            >
+              {{ displayAppName }}
+            </a>
+            的授权
+          </template>
+          <template v-else>
+            已完成此次授权
+          </template>
         </h1>
         <p class="mt-4 text-base leading-8 text-slate-600 dark:text-slate-300">
           复制以下命令并在服务器执行即可。
