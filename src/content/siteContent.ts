@@ -54,7 +54,7 @@ export const footerGroups = [
         label: 'QQ群',
         icon: 'ri:qq-line',
         href:
-          'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=QofGtNhyZdlU0kVZtr81sGxVDMzKGkkt&authKey=59dPS936wuYm%2Bg4qHFkMdo8IYTcdD6Jp8Q9kBb2Mmv8i7APEm0Ms2373ztiW97wE&noverify=0&group_code=830277457',
+          'https://qun.qq.com/universal-share/share?busi_data=eyJncm91cENvZGUiOiI4MzAyNzc0NTciLCJ0b2tlbiI6IkhCZU9LUXdUSXRraUU0R09QdTExT2sydzErSlBOQ3dYY05vMFZRTWNVT3VyY1ZVSFVmbUhuTTJwY2lTOFd1TEMiLCJ1aW4iOiIzMzM1NzkyOTgwIn0=&data=9DhUiv1aJCX7K4gL2QnqsPPD-zWocXJ84fLcTwLe8vcXIYOF4eOpXUufDmaTuzHlAsb7BQ6vTMvpIQ6YkuqivQ&svctype=4&tempid=h5_group_info',
       },
     ],
   },
@@ -85,7 +85,6 @@ export const footerGroups = [
     title: '其他',
     links: [
       { label: '存档', icon: 'ri:archive-line', to: '/archive' },
-      { label: '网页地图', icon: 'ri:map-2-line', to: '/maps' },
       { label: '贡献', icon: 'ri:gift-line', to: '/contribute' },
       { label: '赞助者们', icon: 'ri:heart-3-line', to: '/sponsors' },
       { label: '友情链接', icon: 'ri:links-line', to: '/friendlinks' },
@@ -256,7 +255,7 @@ export const contributeContent = [
     title: '帮助其他玩家',
     description: '欢迎加入我们的交流群，帮助解决其他玩家的困惑。',
     href:
-      'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=QofGtNhyZdlU0kVZtr81sGxVDMzKGkkt&authKey=59dPS936wuYm%2Bg4qHFkMdo8IYTcdD6Jp8Q9kBb2Mmv8i7APEm0Ms2373ztiW97wE&noverify=0&group_code=830277457',
+      'https://qun.qq.com/universal-share/share?busi_data=eyJncm91cENvZGUiOiI4MzAyNzc0NTciLCJ0b2tlbiI6IkhCZU9LUXdUSXRraUU0R09QdTExT2sydzErSlBOQ3dYY05vMFZRTWNVT3VyY1ZVSFVmbUhuTTJwY2lTOFd1TEMiLCJ1aW4iOiIzMzM1NzkyOTgwIn0=&data=9DhUiv1aJCX7K4gL2QnqsPPD-zWocXJ84fLcTwLe8vcXIYOF4eOpXUufDmaTuzHlAsb7BQ6vTMvpIQ6YkuqivQ&svctype=4&tempid=h5_group_info',
     button: 'QQ群聊',
   },
   {
