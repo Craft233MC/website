@@ -222,7 +222,7 @@ export const archiveContent = [
     dateRange: '2023.7.10 — 2024.2.24',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-eJGmd' },
-      { title: 'OneDrive', url: 'https://pan.neokoni.ink/private/onedrive/Craft233/%E7%AC%AC%E4%B8%80%E5%91%A8%E7%9B%AE'},
+      { title: 'OneDrive', url: 'https://pan.neokoni.ink/d/private/onedrive/Craft233/%E7%AC%AC%E4%B8%80%E5%91%A8%E7%9B%AE/backup-2024-02-23(2).zip'},
     ],
   },
   {
@@ -232,7 +232,7 @@ export const archiveContent = [
     dateRange: '2024.3.10 — 2024.8.3',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-tJGmd' },
-      { title: 'OneDrive', url: 'https://pan.neokoni.ink/private/onedrive/Craft233/%E7%AC%AC%E4%BA%8C%E5%91%A8%E7%9B%AECube'},
+      { title: 'OneDrive', url: 'https://pan.neokoni.ink/d/private/onedrive/Craft233/%E7%AC%AC%E4%BA%8C%E5%91%A8%E7%9B%AECube/cube-backup-2024-08-03-22-32.tar.xz'},
     ],
   },
   {
@@ -242,7 +242,7 @@ export const archiveContent = [
     dateRange: '2024.3.10 — 2025.4.2',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123684.com/s/81d8Vv-iJGmd' },
-      { title: 'OneDrive', url: 'https://pan.neokoni.ink/private/onedrive/Craft233/%E7%AC%AC%E4%BA%8C%E5%91%A8%E7%9B%AE'},
+      { title: 'OneDrive', url: 'https://pan.neokoni.ink/d/private/onedrive/Craft233/%E7%AC%AC%E4%BA%8C%E5%91%A8%E7%9B%AE/backup-2025-04-02-19-23.tar.xz'},
     ],
   },
 ] as const
