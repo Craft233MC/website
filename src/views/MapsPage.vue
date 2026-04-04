@@ -27,7 +27,6 @@
           class="flex h-full flex-col justify-between rounded-xl border border-slate-200/80 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-slate-800/80 dark:bg-slate-900/70"
         >
           <div>
-            <p class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-slate-400">服务器地图</p>
             <h2 class="mt-4 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">{{ map.title }}</h2>
             <p v-if="map.description" class="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
               {{ map.description }}
