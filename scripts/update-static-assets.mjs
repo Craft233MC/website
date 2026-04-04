@@ -5,14 +5,10 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 
 const scriptsDir = fileURLToPath(new URL('.', import.meta.url))
 const rootDir = path.resolve(scriptsDir, '..')
-const publicDir = path.join(rootDir, 'public')
-const fontsDir = path.join(publicDir, 'fonts')
-const faviconPath = path.join(publicDir, 'favicon.png')
-const legacyFaviconPath = path.join(publicDir, 'favicon.ico')
-const robotsPath = path.join(publicDir, 'robots.txt')
-const sitemapPath = path.join(publicDir, 'sitemap.xml')
-const fontPath = path.join(fontsDir, 'InterVariable.woff2')
-const fontSource = 'https://rsms.me/inter/font-files/InterVariable.woff2'
+const distDir = path.join(rootDir, 'dist')
+const faviconPath = path.join(distDir, 'favicon.png')
+const robotsPath = path.join(distDir, 'robots.txt')
+const sitemapPath = path.join(distDir, 'sitemap.xml')
 const siteConfigPath = path.join(rootDir, 'src', 'config', 'site.config.json')
 const routeConfigPath = path.join(rootDir, 'src', 'config', 'routes.json')
 
@@ -63,34 +59,20 @@ const normalizeSiteUrl = (value) => {
   return value.replace(/\/$/, '')
 }
 
-await fs.mkdir(fontsDir, { recursive: true })
-await fs.mkdir(publicDir, { recursive: true })
-
-await fs.rm(legacyFaviconPath, { force: true })
-
-const fontResponse = await fetch(fontSource)
-
-if (!fontResponse.ok) {
-  throw new Error(`Failed to fetch font source: ${fontResponse.status} ${fontResponse.statusText}`)
-}
+await fs.mkdir(distDir, { recursive: true })
 
 if (faviconSource) {
-  try {
-    const faviconResponse = await fetch(faviconSource)
-    if (faviconResponse.ok) {
-      const faviconPng = Buffer.from(await faviconResponse.arrayBuffer())
-      await fs.writeFile(faviconPath, faviconPng)
-      console.log(`favicon written to ${faviconPath}`)
-    }
-  } catch {
-    // Ignore favicon download/build failures.
+  const faviconResponse = await fetch(faviconSource)
+  if (!faviconResponse.ok) {
+    throw new Error(`Failed to fetch favicon source: ${faviconResponse.status} ${faviconResponse.statusText}`)
   }
+
+  const faviconPng = Buffer.from(await faviconResponse.arrayBuffer())
+  await fs.writeFile(faviconPath, faviconPng)
+  console.log(`favicon written to ${faviconPath}`)
+} else {
+  throw new Error('faviconSource is required in src/config/site.config.json')
 }
-
-const fontBuffer = Buffer.from(await fontResponse.arrayBuffer())
-await fs.writeFile(fontPath, fontBuffer)
-
-console.log(`font written to ${fontPath}`)
 
 const noIndexRoutes = routeDefinitions.filter((route) => route.noIndex && typeof route.robotsPath === 'string')
 

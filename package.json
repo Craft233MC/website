@@ -4,9 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/update-static-assets.mjs",
+    "build": "vite build && node scripts/update-static-assets.mjs",
     "dev": "vite",
-    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
