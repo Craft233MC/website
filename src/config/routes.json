@@ -1,0 +1,13 @@
+[
+  { "path": "/", "name": "home", "component": "HomePage", "title": "四周目" },
+  { "path": "/about", "name": "about", "component": "AboutPage", "title": "关于 Craft233" },
+  { "path": "/join", "name": "join", "component": "JoinPage", "title": "加入服务器" },
+  { "path": "/maps", "name": "maps", "component": "MapsPage", "title": "网页地图" },
+  { "path": "/callback", "name": "callback", "component": "CallbackPage", "title": "授权回调", "noIndex": true, "robotsPath": "/callback" },
+  { "path": "/rules", "name": "rules", "component": "RulesPage", "title": "规则区" },
+  { "path": "/archive", "name": "archive", "component": "ArchivePage", "title": "获取存档" },
+  { "path": "/contribute", "name": "contribute", "component": "ContributePage", "title": "贡献" },
+  { "path": "/sponsors", "name": "sponsors", "component": "SponsorsPage", "title": "赞助者们" },
+  { "path": "/friendlinks", "name": "friendlinks", "component": "FriendLinksPage", "title": "友情链接" },
+  { "path": "/:pathMatch(.*)*", "name": "not-found", "component": "NotFoundPage", "title": "页面不存在", "noIndex": true, "robotsPath": "/404" }
+]

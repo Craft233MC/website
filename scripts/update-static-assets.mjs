@@ -14,39 +14,29 @@ const sitemapPath = path.join(publicDir, 'sitemap.xml')
 const fontPath = path.join(fontsDir, 'InterVariable.woff2')
 const fontSource = 'https://rsms.me/inter/font-files/InterVariable.woff2'
 const siteConfigPath = path.join(rootDir, 'src', 'config', 'site.config.json')
-const seoConfigPath = path.join(rootDir, 'src', 'config', 'seo.config.json')
+const routeConfigPath = path.join(rootDir, 'src', 'config', 'routes.json')
 
 let faviconSource = ''
 let basePath = '/'
-let noIndexPaths = ['/callback']
-
-const sitemapRoutes = [
-  '/',
-  '/about',
-  '/join',
-  '/maps',
-  '/rules',
-  '/archive',
-  '/contribute',
-  '/sponsors',
-  '/friendlinks',
-]
+let siteUrl = ''
+let routeDefinitions = []
 
 try {
   const siteConfig = JSON.parse(await fs.readFile(siteConfigPath, 'utf8'))
   faviconSource = typeof siteConfig.faviconSource === 'string' ? siteConfig.faviconSource.trim() : ''
   basePath = typeof siteConfig.basePath === 'string' ? siteConfig.basePath.trim() || '/' : '/'
+  siteUrl = typeof siteConfig.siteUrl === 'string' ? siteConfig.siteUrl.trim() : ''
 } catch {
   faviconSource = ''
 }
 
 try {
-  const seoConfig = JSON.parse(await fs.readFile(seoConfigPath, 'utf8'))
-  if (Array.isArray(seoConfig.noIndexPaths)) {
-    noIndexPaths = seoConfig.noIndexPaths.filter((value) => typeof value === 'string' && value.trim().length > 0)
+  const routeConfig = JSON.parse(await fs.readFile(routeConfigPath, 'utf8'))
+  if (Array.isArray(routeConfig)) {
+    routeDefinitions = routeConfig.filter((route) => route && typeof route.path === 'string' && typeof route.name === 'string')
   }
 } catch {
-  // Fall back to the default blacklist.
+  routeDefinitions = []
 }
 
 const normalizeBasePath = (value) => {
@@ -67,6 +57,10 @@ const joinPath = (prefix, pathname) => {
   }
 
   return `${prefix}${pathname}`.replace(/\/+/g, '/')
+}
+
+const normalizeSiteUrl = (value) => {
+  return value.replace(/\/$/, '')
 }
 
 await fs.mkdir(fontsDir, { recursive: true })
@@ -98,9 +92,11 @@ await fs.writeFile(fontPath, fontBuffer)
 
 console.log(`font written to ${fontPath}`)
 
+const noIndexRoutes = routeDefinitions.filter((route) => route.noIndex && typeof route.robotsPath === 'string')
+
 const robotsLines = [
   'User-agent: *',
-  ...noIndexPaths.map((pathname) => `Disallow: ${joinPath(normalizeBasePath(basePath), pathname.trim())}`),
+  ...noIndexRoutes.map((route) => `Disallow: ${joinPath(normalizeBasePath(basePath), route.robotsPath.trim())}`),
   '',
 ]
 
@@ -108,16 +104,20 @@ await fs.writeFile(robotsPath, robotsLines.join('\n'), 'utf8')
 
 console.log(`robots written to ${robotsPath}`)
 
+if (!siteUrl) {
+  throw new Error('siteUrl is required in src/config/site.config.json')
+}
+
 const sitemap = new SitemapStream({
-  hostname: 'https://www.craft233.top',
+  hostname: normalizeSiteUrl(siteUrl),
 })
 
-for (const pathname of sitemapRoutes) {
-  if (noIndexPaths.includes(pathname)) {
+for (const route of routeDefinitions) {
+  if (route.noIndex) {
     continue
   }
 
-  sitemap.write({ url: joinPath(normalizeBasePath(basePath), pathname), changefreq: 'weekly', priority: pathname === '/' ? 1 : 0.8 })
+  sitemap.write({ url: joinPath(normalizeBasePath(basePath), route.path), changefreq: 'weekly', priority: route.path === '/' ? 1 : 0.8 })
 }
 
 sitemap.end()

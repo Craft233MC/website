@@ -11,10 +11,10 @@ import {
   serverMapContent,
   sponsorsContent,
 } from '@/content/siteContent'
-import seoConfig from '@/config/seo.config.json'
+import routeDefinitions from '@/config/routes.json'
 import siteConfig from '@/config/site.config.json'
 
-export const siteOrigin = window.location.origin
+export const siteOrigin = siteConfig.siteUrl
 export const siteBasePath = siteConfig.basePath === '/dev' ? '/dev' : ''
 export const siteFavicon = '/favicon.png'
 
@@ -29,20 +29,24 @@ export type SeoInfo = {
 
 type RouteKey = keyof typeof pages | 'not-found'
 
-const noIndexPaths = new Set((seoConfig.noIndexPaths ?? []).filter((value): value is string => typeof value === 'string'))
+const routeLookup = new Map(routeDefinitions.map((route) => [route.name, route]))
+
+const noIndexPaths = new Set(
+  routeDefinitions.filter((route) => route.noIndex).map((route) => route.path),
+)
 
 const routePaths: Record<RouteKey, string | null> = {
-  home: '/',
-  about: '/about',
-  join: '/join',
-  maps: '/maps',
-  callback: '/callback',
-  rules: '/rules',
-  archive: '/archive',
-  contribute: '/contribute',
-  sponsors: '/sponsors',
-  friendlinks: '/friendlinks',
-  'not-found': null,
+  home: routeLookup.get('home')?.path ?? '/',
+  about: routeLookup.get('about')?.path ?? '/about',
+  join: routeLookup.get('join')?.path ?? '/join',
+  maps: routeLookup.get('maps')?.path ?? '/maps',
+  callback: routeLookup.get('callback')?.path ?? '/callback',
+  rules: routeLookup.get('rules')?.path ?? '/rules',
+  archive: routeLookup.get('archive')?.path ?? '/archive',
+  contribute: routeLookup.get('contribute')?.path ?? '/contribute',
+  sponsors: routeLookup.get('sponsors')?.path ?? '/sponsors',
+  friendlinks: routeLookup.get('friendlinks')?.path ?? '/friendlinks',
+  'not-found': routeLookup.get('not-found')?.path ?? null,
 }
 
 const compact = (values: string[], limit = 3) => values.filter(Boolean).slice(0, limit).join('、')
@@ -170,7 +174,7 @@ const updateLink = (rel: string, href: string, attrs: Record<string, string> = {
 export const applySeo = (routeKey: RouteKey) => {
   const seo = seoMap[routeKey] ?? seoMap.home
   const routePath = routePaths[routeKey]
-  const shouldNoIndex = routeKey === 'not-found' || (routePath ? noIndexPaths.has(routePath) : false)
+  const shouldNoIndex = routePath ? noIndexPaths.has(routePath) : false
 
   document.title = seo.title
 
