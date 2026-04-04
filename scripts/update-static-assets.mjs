@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { SitemapStream, streamToPromise } from 'sitemap'
 
 const scriptsDir = fileURLToPath(new URL('.', import.meta.url))
 const rootDir = path.resolve(scriptsDir, '..')
@@ -9,6 +10,7 @@ const fontsDir = path.join(publicDir, 'fonts')
 const faviconPath = path.join(publicDir, 'favicon.png')
 const legacyFaviconPath = path.join(publicDir, 'favicon.ico')
 const robotsPath = path.join(publicDir, 'robots.txt')
+const sitemapPath = path.join(publicDir, 'sitemap.xml')
 const fontPath = path.join(fontsDir, 'InterVariable.woff2')
 const fontSource = 'https://rsms.me/inter/font-files/InterVariable.woff2'
 const siteConfigPath = path.join(rootDir, 'src', 'config', 'site.config.json')
@@ -17,6 +19,18 @@ const seoConfigPath = path.join(rootDir, 'src', 'config', 'seo.config.json')
 let faviconSource = ''
 let basePath = '/'
 let noIndexPaths = ['/callback']
+
+const sitemapRoutes = [
+  '/',
+  '/about',
+  '/join',
+  '/maps',
+  '/rules',
+  '/archive',
+  '/contribute',
+  '/sponsors',
+  '/friendlinks',
+]
 
 try {
   const siteConfig = JSON.parse(await fs.readFile(siteConfigPath, 'utf8'))
@@ -93,3 +107,22 @@ const robotsLines = [
 await fs.writeFile(robotsPath, robotsLines.join('\n'), 'utf8')
 
 console.log(`robots written to ${robotsPath}`)
+
+const sitemap = new SitemapStream({
+  hostname: 'https://www.craft233.top',
+})
+
+for (const pathname of sitemapRoutes) {
+  if (noIndexPaths.includes(pathname)) {
+    continue
+  }
+
+  sitemap.write({ url: joinPath(normalizeBasePath(basePath), pathname), changefreq: 'weekly', priority: pathname === '/' ? 1 : 0.8 })
+}
+
+sitemap.end()
+
+const sitemapXml = await streamToPromise(sitemap)
+await fs.writeFile(sitemapPath, sitemapXml)
+
+console.log(`sitemap written to ${sitemapPath}`)
