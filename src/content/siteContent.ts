@@ -195,7 +195,7 @@ export const serverMapContent = {
       key: 'lights',
       title: '主服网页地图',
       description: '查看主世界、城镇与常用设施的整体分布。',
-      url: 'https://www.craft233.top/map/lights',
+      url: 'https://dev.www.craft233.top/map/lights',
     },
   ],
 } as const
