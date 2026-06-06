@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           source: dist/*
-          target: /opt/1panel/www/sites/dev.www.craft233.top/index/
+          target: /opt/1panel/www/sites/www.craft233.top/index/
           rm: true
           strip_components: 1
           
