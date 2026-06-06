@@ -12,8 +12,7 @@
         <RouterLink to="/" class="inline-flex w-fit shrink-0 items-center gap-3">
           <img :src="siteBrand.logo" :alt="siteBrand.name + ' logo'" class="h-8 w-auto" />
           <div class="leading-tight">
-            <div class="text-sm font-semibold tracking-[0.06em] text-emerald-600 dark:text-emerald-400 lg:text-base">Craft233</div>
-            <div class="hidden text-xs text-slate-500 dark:text-slate-400 sm:block lg:text-sm">Minecraft 生存服务器</div>
+            <div class="text-sm font-semibold tracking-[0.06em] text-emerald-600 dark:text-emerald-400 lg:text-base">{{ siteBrand.name }}</div>
           </div>
         </RouterLink>
 
