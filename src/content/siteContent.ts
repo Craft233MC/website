@@ -128,14 +128,8 @@ export const homeContent = {
     {
       title: '原版生存',
       description:
-        '由原版 Folia 系服务端驱动的原版粘液生存服务器，体验与大部分原版生存服类似，包括常见的家、传送等功能。服务端设置尽可能保持原版特性，已开启可以还原原版特性的所有选项。',
+        '由原版 Folia 系服务端驱动的原版生存服务器，体验与大部分原版生存服类似，包括常见的家、传送等功能。服务端设置尽可能保持原版特性，已开启可以还原原版特性的所有选项。',
       image: 'https://www.craft233.top/assets/img/index/hub.png',
-    },
-    {
-      title: '单方块生存',
-      description:
-        '原版经典单方块生存服务器，大部分时间由 Leaves 驱动，若更新新版本可能会更换一段时间 Paper 端。不限制生电及机器，除粘液科技外与原版生存差距不大，也尽可能开启了原版特性。',
-      image: 'https://www.craft233.top/assets/img/index/oneblock.png',
     },
   ],
   teamTitle: '我们的团队',
@@ -167,7 +161,7 @@ export const joinContent = {
   servers: [
     {
       name: 'Craft233',
-      address: 'mc.craft233.top',
+      address: 'pre.mc.craft233.top',
     },
   ],
   steps: [
@@ -344,9 +338,9 @@ export const aboutContent = {
       description: '扩展玩法与社区协作，完成第二阶段存档归档。',
     },
     {
-      date: '6.18 至今',
-      title: '第三周目运行中',
-      description: '第三周目已宣传并持续运行，服务保持活跃。',
+      date: '2025.6.18 - 2026.6.21',
+      title: '第三周目结档',
+      description: '暂定第三周目结档时间，之后将在几天内公布存档。',
     },
     {
       date: '进行中',
