@@ -1,5 +1,5 @@
 <template>
-  <NotificationBanner />
+  <!-- <NotificationBanner /> -->
   <div class="min-h-screen text-slate-900 dark:text-slate-100">
     <a
       href="#main-content"
@@ -206,7 +206,7 @@ import { Icon } from '@iconify/vue'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { footerGroups, footerSocialLinks, legalNotice, navigation, siteBrand } from '@/content/siteContent'
-import NotificationBanner from '@/components/NotificationBanner.vue'
+// import NotificationBanner from '@/components/NotificationBanner.vue'
 
 const route = useRoute()
 const menuOpen = ref(false)
