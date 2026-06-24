@@ -239,6 +239,16 @@ export const archiveContent = [
       { title: 'OneDrive', url: 'https://pan.neokoni.ink/d/private/onedrive/Craft233/%E7%AC%AC%E4%BA%8C%E5%91%A8%E7%9B%AE/backup-2025-04-02-19-23.tar.xz'},
     ],
   },
+  {
+    title: '第三周目',
+    description: '第三周目的存档。',
+    image: 'https://www.craft233.top/assets/img/week3/ablock.png',
+    dateRange: '2025.6.18 — 2026.6.21',
+    downloadInfos: [
+      { title: '123云盘', url: 'https://www.123684.com/s/81d8Vv-O204d' },
+      { title: 'OneDrive', url: 'https://pan.neokoni.ink/private/onedrive/Craft233/%E7%AC%AC%E4%B8%89%E5%91%A8%E7%9B%AE-public'},
+    ],
+  }
 ] as const
 
 export const contributeContent = [
