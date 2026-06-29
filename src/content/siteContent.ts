@@ -115,7 +115,7 @@ export const homeContent = {
   hero: {
     eyebrow: 'Craft233',
     title: '轻量增强，不改原味的生存体验。',
-    subtitle: '从基础生存出发，保留原版乐趣，和玩家一起慢慢建设。',
+    subtitle: '一个简单的Minecraft Server, 保留原版特性并进行轻量增强。',
     actions: [
       { label: '加入服务器', to: '/join', variant: 'primary' },
       { label: '网页地图', to: '/maps', variant: 'ghost' },
