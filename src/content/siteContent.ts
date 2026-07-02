@@ -161,7 +161,7 @@ export const joinContent = {
   servers: [
     {
       name: 'Craft233',
-      address: 'pre.mc.craft233.top',
+      address: 'mc.craft233.top',
     },
   ],
   steps: [
