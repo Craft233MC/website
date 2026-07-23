@@ -138,7 +138,7 @@ export const homeContent = {
     {
       name: 'Neokoni',
       role: '服主 · 技术 · 开发',
-      avatar: 'https://q1.qlogo.cn/g?b=qq&nk=3335792980&s=640',
+      avatar: 'https://avatars.githubusercontent.com/u/90206655?v=4',
       bio: ['每天都在摸鱼的鸽子。'],
       links: [
         { label: 'GitHub', href: 'https://github.com/neokoni', icon: 'ri:github-line' },
@@ -146,11 +146,13 @@ export const homeContent = {
       ],
     },
     {
-      name: '233laoliu',
+      name: 'Funrestan',
       role: '管理员',
-      avatar: 'https://q1.qlogo.cn/g?b=qq&nk=2117015126&s=640',
-      bio: ['这个人很神秘，没有留下任何东西。'],
-      links: [],
+      avatar: 'https://avatars.githubusercontent.com/u/195662688?v=4',
+      bio: ['洛茜是熟女!'],
+      links: [
+        { label: 'GitHub', href: 'https://github.com/funrestan', icon: 'ri:github-line' },
+      ],
     },
   ],
 } as const
