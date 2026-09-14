@@ -1,14 +1,10 @@
 {
   "basePath": "/",
-  "siteUrl": "https://www.craft233.top",
+  "siteUrl": "https://www.craft233.cn",
   "faviconSource": "https://res.neokoni.ink/craft233/img/craft233_logo_64.png",
   "themeColor": "#10b981",
   "callbackAppLinks": {
     "RhythmLink": "https://github.com/neokoni/rhythmlink"
-  },
-  "serverMapLinks": {
-    "main": "https://map.craft233.top/",
-    "oneblock": "https://map.craft233.top/oneblock/"
   },
   "minecraftStatusApi": {
     "url": "https://motd.minebbs.com/api/status",

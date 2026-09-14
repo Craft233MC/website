@@ -176,7 +176,7 @@
               萌ICP备20232336号
             </a>
             <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              蜀ICP备2024074700号-1
+              蜀ICP备2024074700号-3
             </a>
             <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
               川公网安备51130402000151号

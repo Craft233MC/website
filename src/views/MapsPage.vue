@@ -52,19 +52,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import siteConfig from '@/config/site.config.json'
 import { serverMapContent } from '@/content/siteContent'
-
-type ServerMapLinks = Record<string, string>
-
-type MapItem = (typeof serverMapContent.items)[number]
-
-const configuredMapLinks = (siteConfig.serverMapLinks ?? {}) as ServerMapLinks
 
 const resolvedMaps = computed(() =>
   serverMapContent.items.map((item) => ({
     ...item,
-    url: configuredMapLinks[item.key]?.trim() || item.url,
+    url: item.url,
   })),
 )
 </script>

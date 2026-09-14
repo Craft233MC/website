@@ -2,7 +2,7 @@ export const siteBrand = {
   name: 'Craft233',
   logo: 'https://res.neokoni.ink/craft233/img/craft233_logo.svg',
   description: 'Craft233，一个休闲养老摸鱼系的 Minecraft 小服务器，欢迎加入我们，同我们一起成长。',
-  docsUrl: 'https://docs.craft233.top',
+  docsUrl: 'https://docs.craft233.cn',
 }
 
 export const pages = {
@@ -77,7 +77,7 @@ export const footerGroups = [
   {
     title: '相关链接',
     links: [
-      { label: '外部监测站', icon: 'ri:pulse-line', href: 'https://status.craft233.top' },
+      { label: '外部监测站', icon: 'ri:pulse-line', href: 'https://status.craft233.cn' },
       { label: '爱发电', icon: 'ri:hand-heart-line', href: 'https://afdian.com/a/neokoni/' },
     ],
   },
@@ -129,7 +129,7 @@ export const homeContent = {
       title: '原版生存',
       description:
         '由原版 Folia 系服务端驱动的原版生存服务器，体验与大部分原版生存服类似，包括常见的家、传送等功能。服务端设置尽可能保持原版特性，已开启可以还原原版特性的所有选项。',
-      image: 'https://www.craft233.top/assets/img/index/hub.png',
+      image: 'https://www.craft233.cn/assets/img/index/hub.png',
     },
   ],
   teamTitle: '我们的团队',
@@ -163,21 +163,21 @@ export const joinContent = {
   servers: [
     {
       name: 'Craft233',
-      address: 'mc.craft233.top',
+      address: 'mc.craft233.cn',
     },
   ],
   steps: [
     {
       title: '进入游戏菜单',
-      image: 'https://docs.craft233.top/assets/JavaHomePage.ChXN-PvP.png',
+      image: 'https://docs.craft233.cn/assets/JavaHomePage.ChXN-PvP.png',
     },
     {
       title: '点击添加服务器',
-      image: 'https://docs.craft233.top/assets/javaServerList.ClEIZ0Kn.png',
+      image: 'https://docs.craft233.cn/assets/javaServerList.ClEIZ0Kn.png',
     },
     {
       title: '填入信息并保存',
-      image: 'https://docs.craft233.top/assets/javaAddServer.C_XH7osL.png',
+      image: 'https://docs.craft233.cn/assets/javaAddServer.C_XH7osL.png',
     },
   ],
 } as const
@@ -190,7 +190,7 @@ export const serverMapContent = {
       key: 'lights',
       title: '主服网页地图',
       description: '查看主世界、城镇与常用设施的整体分布。',
-      url: 'https://www.craft233.top/map/lights',
+      url: 'https://www.craft233.cn/map/lights',
     },
   ],
 } as const
@@ -214,7 +214,7 @@ export const archiveContent = [
     title: '第一周目',
     description:
       'Craft233 最原始的一个周目，此时我们正在用不知名的配置开服，一切都是未知的，每一次修改都是对开服的学习。',
-    image: 'https://www.craft233.top/assets/img/week1/2023-08-31_00.03.12.png',
+    image: 'https://www.craft233.cn/assets/img/week1/2023-08-31_00.03.12.png',
     dateRange: '2023.7.10 — 2024.2.24',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-eJGmd' },
@@ -224,7 +224,7 @@ export const archiveContent = [
   {
     title: '第二周目：Cube',
     description: '第二周目的生电服存档，因无人感兴趣加入与管理维护降低，在很长一段时间之前就已是空服。第二周目并未结束，仅 Cube。',
-    image: 'https://www.craft233.top/assets/img/week2/cube/cube-screenshot-from-bili.png',
+    image: 'https://www.craft233.cn/assets/img/week2/cube/cube-screenshot-from-bili.png',
     dateRange: '2024.3.10 — 2024.8.3',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123912.com/s/81d8Vv-tJGmd' },
@@ -234,7 +234,7 @@ export const archiveContent = [
   {
     title: '第二周目',
     description: '第二周目的非生电服存档。',
-    image: 'https://www.craft233.top/assets/img/week2/town.png',
+    image: 'https://www.craft233.cn/assets/img/week2/town.png',
     dateRange: '2024.3.10 — 2025.4.2',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123684.com/s/81d8Vv-iJGmd' },
@@ -244,7 +244,7 @@ export const archiveContent = [
   {
     title: '第三周目',
     description: '第三周目的存档。',
-    image: 'https://www.craft233.top/assets/img/week3/ablock.png',
+    image: 'https://www.craft233.cn/assets/img/week3/ablock.png',
     dateRange: '2025.6.18 — 2026.6.21',
     downloadInfos: [
       { title: '123云盘', url: 'https://www.123684.com/s/81d8Vv-O204d' },
