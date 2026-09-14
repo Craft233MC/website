@@ -364,6 +364,6 @@ export const aboutContent = {
 
 export const footerLinksContent = [
   { title: '萌ICP备20232336号', url: 'https://icp.gov.moe/?keyword=20232336', newTab: true },
-  { title: '蜀ICP备2024074700号-3', url: 'https://beian.miit.gov.cn/', newTab: true },
+  { title: '蜀ICP备2024074700号-4', url: 'https://beian.miit.gov.cn/', newTab: true },
   { title: ' 川公网安备51130402000151号', url: 'https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151', newTab: true },
 ]
