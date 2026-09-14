@@ -77,8 +77,7 @@
           <div class="w-full max-w-xl rounded-xl border border-slate-200 bg-white/95 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/95">
           <div class="mb-6 flex items-center justify-between">
             <div>
-              <div class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Craft233</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400">站点导航</div>
+              <div class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{{ siteBrand.name }}</div>
             </div>
             <button
               type="button"
@@ -127,7 +126,7 @@
           <div>
             <RouterLink to="/" class="flex items-center gap-3">
               <img :src="siteBrand.logo" :alt="siteBrand.name + ' logo'" class="h-9 w-auto" />
-              <span class="text-2xl font-semibold tracking-tight">Craft233</span>
+              <span class="text-2xl font-semibold tracking-tight">{{ siteBrand.name }}</span>
             </RouterLink>
             <p class="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-400">
               {{ siteBrand.description }}
@@ -172,15 +171,14 @@
         <div class="mt-10 grid grid-cols-1 gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:items-center">
           <p class="text-center lg:justify-self-start lg:text-left">© 2023-{{ currentYear }} Craft233. All rights reserved.</p>
           <div class="flex flex-col items-center justify-center gap-2 sm:flex-row sm:flex-wrap sm:gap-3 lg:justify-self-center lg:gap-2.5">
-            <a href="https://icp.gov.moe/?keyword=20232336" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              萌ICP备20232336号
-            </a>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              蜀ICP备2024074700号-3
-            </a>
-            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51130402000151" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
-              川公网安备51130402000151号
-            </a>
+            <div v-for="link in footerLinksContent" :key="link.title">
+              <a 
+                :href="link.url"
+                :target="link.newTab? '_blank' : undefined"
+                rel="noreferrer" class="inline-flex items-center gap-1.5 leading-5 hover:text-emerald-600 dark:hover:text-emerald-400">
+                {{ link.title }}
+              </a>
+            </div>
           </div>
           <div class="flex items-center justify-center gap-4 text-slate-600 dark:text-slate-300 lg:justify-self-end">
             <a
@@ -205,7 +203,7 @@
 import { Icon } from '@iconify/vue'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { footerGroups, footerSocialLinks, legalNotice, navigation, siteBrand } from '@/content/siteContent'
+import { footerGroups, footerSocialLinks, legalNotice, navigation, siteBrand, footerLinksContent } from '@/content/siteContent'
 // import NotificationBanner from '@/components/NotificationBanner.vue'
 
 const route = useRoute()
