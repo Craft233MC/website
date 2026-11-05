@@ -42,6 +42,7 @@ export const navigation = [
   { label: '首页', to: '/' },
   { label: '加入', to: '/join' },
   { label: '地图', to: '/maps' },
+  { label: '反馈', href: 'https://issues.craft233.cn' },
   { label: '规则', to: '/rules' },
   { label: '关于', to: '/about' },
 ] as const
@@ -79,6 +80,7 @@ export const footerGroups = [
     links: [
       { label: '外部监测站', icon: 'ri:pulse-line', href: 'https://status.craft233.cn' },
       { label: '爱发电', icon: 'ri:hand-heart-line', href: 'https://afdian.com/a/neokoni/' },
+      { label: '议题追踪器', icon: 'ri:bug-line', href: 'https://issues.craft233.cn' },
     ],
   },
   {
@@ -119,7 +121,6 @@ export const homeContent = {
     actions: [
       { label: '加入服务器', to: '/join', variant: 'primary' },
       { label: '网页地图', to: '/maps', variant: 'ghost' },
-      { label: '查看规则', to: '/rules', variant: 'ghost' },
       { label: '文档站', href: siteBrand.docsUrl, variant: 'outline' },
     ],
     image: siteBrand.logo,
@@ -259,6 +260,14 @@ export const contributeContent = [
     description: '欢迎在 GitHub 上帮助我们改进文档与网站。',
     href: 'https://github.com/Craft233MC',
     button: 'GitHub',
+    icon: 'ri:github-line',
+  },
+  {
+    title: '反馈问题与建议',
+    description: '欢迎在Craft233议题追踪器上反馈服务器问题或您对服务器的建议。',
+    href: 'https://issues.craft233.cn',
+    button: '议题追踪器',
+    icon: 'ri:bug-line',
   },
   {
     title: '帮助其他玩家',
@@ -266,12 +275,14 @@ export const contributeContent = [
     href:
       'https://qun.qq.com/universal-share/share?busi_data=eyJncm91cENvZGUiOiI4MzAyNzc0NTciLCJ0b2tlbiI6IkhCZU9LUXdUSXRraUU0R09QdTExT2sydzErSlBOQ3dYY05vMFZRTWNVT3VyY1ZVSFVmbUhuTTJwY2lTOFd1TEMiLCJ1aW4iOiIzMzM1NzkyOTgwIn0=&data=9DhUiv1aJCX7K4gL2QnqsPPD-zWocXJ84fLcTwLe8vcXIYOF4eOpXUufDmaTuzHlAsb7BQ6vTMvpIQ6YkuqivQ&svctype=4&tempid=h5_group_info',
     button: 'QQ群聊',
+    icon: 'ri:qq-line',
   },
   {
     title: '提供资金支持',
     description: 'Craft233 使用爱发电来管理各种日常开支，其中大部分与基础设施有关。',
     href: 'https://afdian.com/a/neokoni/',
     button: '爱发电',
+    icon: 'ri:hand-heart-line',
   },
 ] as const
 
